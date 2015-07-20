@@ -10,9 +10,11 @@
 #import <MapKit/MapKit.h>
 #import <INTULocationManager.h>
 #import "AFDataStore.h"
+#import "RestaurantAnnotation.h"
 
 @interface ViewController () <MKMapViewDelegate>
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
+@property (nonatomic) AFDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocation *currentLocation;
 @property (nonatomic) BOOL loaded;
@@ -22,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dataStore = [AFDataStore sharedData];
     self.mapView.delegate = self;
     self.locationRequestID = NSNotFound;
     [self.mapView setShowsUserLocation:YES];
@@ -33,7 +36,10 @@
 
 
 -(void) setupMap {
-    [[AFDataStore sharedData] getRestaurantsWith:300 CurrentLocation:self.currentLocation];
+    [self.dataStore getRestaurantsWith:300 CurrentLocation:self.currentLocation Completion:^{
+        NSLog(@"%@", self.dataStore.results);
+        [self plotRestaurants];
+    }];
 }
 
 #pragma mark - UNTULocationManager
@@ -83,10 +89,39 @@
 
 -(void) centerMapOnLocation:(CLLocation *)location {
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 250, 250);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 700, 700);
     
     [self.mapView setRegion:region];
     
+}
+
+-(void)plotRestaurants
+{
+    for (id<MKAnnotation>annotation in self.mapView.annotations) {
+        [self.mapView removeAnnotation:annotation];
+    }
+    
+    for (NSDictionary *restaurant in self.dataStore.results) {
+        NSNumber *latitude = restaurant[@"geometry"][@"location"][@"lat"];
+        NSNumber *longitude = restaurant[@"geometry"][@"location"][@"lng"];
+        NSString *name = restaurant[@"name"];
+        NSString *address = restaurant[@"vicinity"];
+        
+        
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = latitude.doubleValue;
+        coordinate.longitude = longitude.doubleValue;
+        RestaurantAnnotation *annotation = [[RestaurantAnnotation alloc] initWithName:name Coordinate:coordinate Address:address];
+        [self.mapView addAnnotation:annotation];
+    }
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *identifier = @"RestaurantAnnotation";
+    MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    annotationView.annotation = annotation;
+    return annotationView;
 }
 
 @end
