@@ -22,6 +22,9 @@
     [super viewDidLoad];
     self.mapView.delegate = self;
     [self.mapView setShowsUserLocation:YES];
+    self.mapView.zoomEnabled = NO;
+    self.mapView.scrollEnabled = NO;
+    [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
 }
 
@@ -41,7 +44,6 @@
         if (status == INTULocationStatusSuccess) {
             // A new updated location is available in currentLocation, and achievedAccuracy indicates how accurate this particular location is
             strongSelf.currentLocation = currentLocation;
-            
             [self centerMapOnLocation:currentLocation];
         }
         else {
@@ -72,7 +74,7 @@
 
 -(void) centerMapOnLocation:(CLLocation *)location {
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 2000.0, 2000.0);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 250, 250);
     
     [self.mapView setRegion:region];
     
