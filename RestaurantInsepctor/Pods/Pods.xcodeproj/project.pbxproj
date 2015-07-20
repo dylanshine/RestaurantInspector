@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EB4EAD21C0937C3919B0364 /* INTULocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A3FA6F636EB76D07B19013 /* INTULocationManager.h */; };
+		37F64A6CE12897083B42E845 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF48F611EDF4BB2E9014090 /* Foundation.framework */; };
+		40F30FF70356B40AB81AEE47 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37481ABA962CC92F85DE5DFA /* Pods-dummy.m */; };
+		6D8FF41D79AFE76FC400409A /* INTULocationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E4961DE96301514C4C30FB39 /* INTULocationRequest.h */; };
+		8238E5445DD20AF53E4C45B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF48F611EDF4BB2E9014090 /* Foundation.framework */; };
+		B188024FF359224A391050CE /* INTULocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9BB20266AFADF98D285159B /* INTULocationManager.m */; };
+		C3186835BE114BB2C128F2E4 /* INTULocationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 953A931A722BB5FF8BF84FF9 /* INTULocationRequest.m */; };
+		D3CA7A3394A4EE8EB19874C6 /* INTULocationManager+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC9FFC93D63881DE62F7ED9 /* INTULocationManager+Internal.h */; };
+		ED975C2958CA055E01A9472E /* INTULocationRequestDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2263939BB78F19ABFEF9B7CD /* INTULocationRequestDefines.h */; };
+		F4AB881C629A504ECF539F44 /* Pods-INTULocationManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 800DD7267C73FC2381B78C31 /* Pods-INTULocationManager-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9329F084776484A8F4F574C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A090A694DF0677331C74AE03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35C4A8502C381FFA847C1555;
+			remoteInfo = "Pods-INTULocationManager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16FB02EC6FDC73CB3F62074A /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		1FF48F611EDF4BB2E9014090 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2263939BB78F19ABFEF9B7CD /* INTULocationRequestDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = INTULocationRequestDefines.h; path = LocationManager/INTULocationManager/INTULocationRequestDefines.h; sourceTree = "<group>"; };
+		24DDD276FF9E2F2B613D16A0 /* libPods-INTULocationManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-INTULocationManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A63D50C536E801EF5590F1 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		37481ABA962CC92F85DE5DFA /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		4108B682DEACBDBBA9C40C1E /* Pods-INTULocationManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INTULocationManager.xcconfig"; sourceTree = "<group>"; };
+		45AB952CEE235B1DC0D8D24F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5F9FDF5CE7B4E79889C1E685 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		74A8C257ECD80BE1351E38FE /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7FC9FFC93D63881DE62F7ED9 /* INTULocationManager+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "INTULocationManager+Internal.h"; path = "LocationManager/INTULocationManager/INTULocationManager+Internal.h"; sourceTree = "<group>"; };
+		800DD7267C73FC2381B78C31 /* Pods-INTULocationManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-INTULocationManager-dummy.m"; sourceTree = "<group>"; };
+		81A3FA6F636EB76D07B19013 /* INTULocationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = INTULocationManager.h; path = LocationManager/INTULocationManager/INTULocationManager.h; sourceTree = "<group>"; };
+		8315B73574187BA5D8E8469B /* Pods-INTULocationManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-INTULocationManager-Private.xcconfig"; sourceTree = "<group>"; };
+		953A931A722BB5FF8BF84FF9 /* INTULocationRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = INTULocationRequest.m; path = LocationManager/INTULocationManager/INTULocationRequest.m; sourceTree = "<group>"; };
+		A14AF14F2643D256E2E342DD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		B9FD71235530B0F3172392A6 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		E3462E950D665BD06FE85AD9 /* Pods-INTULocationManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-INTULocationManager-prefix.pch"; sourceTree = "<group>"; };
+		E4961DE96301514C4C30FB39 /* INTULocationRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = INTULocationRequest.h; path = LocationManager/INTULocationManager/INTULocationRequest.h; sourceTree = "<group>"; };
+		F432176D8CD006F36B5C20EE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9BB20266AFADF98D285159B /* INTULocationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = INTULocationManager.m; path = LocationManager/INTULocationManager/INTULocationManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0423E08571F8F30F15F1C62C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F64A6CE12897083B42E845 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ED2E9DDC5DC6593F0AB4123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8238E5445DD20AF53E4C45B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F3235975ECD71E2B9E78F25 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1FF48F611EDF4BB2E9014090 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		4518CFD4B21FA5F82853E95D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4108B682DEACBDBBA9C40C1E /* Pods-INTULocationManager.xcconfig */,
+				8315B73574187BA5D8E8469B /* Pods-INTULocationManager-Private.xcconfig */,
+				800DD7267C73FC2381B78C31 /* Pods-INTULocationManager-dummy.m */,
+				E3462E950D665BD06FE85AD9 /* Pods-INTULocationManager-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-INTULocationManager";
+			sourceTree = "<group>";
+		};
+		6344CFC0526A59522119FF6E = {
+			isa = PBXGroup;
+			children = (
+				45AB952CEE235B1DC0D8D24F /* Podfile */,
+				D14FF4D4C6B9ED50096664BD /* Frameworks */,
+				D3B36E1F1D598AB30DD22B77 /* Pods */,
+				BBC927D72EC532EF9AE89EDB /* Products */,
+				B5111DDDDF9404420608A318 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7105F9CA52A859DF207B662F /* INTULocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				81A3FA6F636EB76D07B19013 /* INTULocationManager.h */,
+				F9BB20266AFADF98D285159B /* INTULocationManager.m */,
+				7FC9FFC93D63881DE62F7ED9 /* INTULocationManager+Internal.h */,
+				E4961DE96301514C4C30FB39 /* INTULocationRequest.h */,
+				953A931A722BB5FF8BF84FF9 /* INTULocationRequest.m */,
+				2263939BB78F19ABFEF9B7CD /* INTULocationRequestDefines.h */,
+				4518CFD4B21FA5F82853E95D /* Support Files */,
+			);
+			path = INTULocationManager;
+			sourceTree = "<group>";
+		};
+		B5111DDDDF9404420608A318 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8082D38699ADABE4E8F62E5 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BBC927D72EC532EF9AE89EDB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F432176D8CD006F36B5C20EE /* libPods.a */,
+				24DDD276FF9E2F2B613D16A0 /* libPods-INTULocationManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8082D38699ADABE4E8F62E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74A8C257ECD80BE1351E38FE /* Pods-acknowledgements.markdown */,
+				36A63D50C536E801EF5590F1 /* Pods-acknowledgements.plist */,
+				37481ABA962CC92F85DE5DFA /* Pods-dummy.m */,
+				16FB02EC6FDC73CB3F62074A /* Pods-environment.h */,
+				B9FD71235530B0F3172392A6 /* Pods-resources.sh */,
+				5F9FDF5CE7B4E79889C1E685 /* Pods.debug.xcconfig */,
+				A14AF14F2643D256E2E342DD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		D14FF4D4C6B9ED50096664BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F3235975ECD71E2B9E78F25 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3B36E1F1D598AB30DD22B77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7105F9CA52A859DF207B662F /* INTULocationManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C58D988792C95D64250AE583 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3CA7A3394A4EE8EB19874C6 /* INTULocationManager+Internal.h in Headers */,
+				2EB4EAD21C0937C3919B0364 /* INTULocationManager.h in Headers */,
+				6D8FF41D79AFE76FC400409A /* INTULocationRequest.h in Headers */,
+				ED975C2958CA055E01A9472E /* INTULocationRequestDefines.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01F8774934F96C6C6D62AA2B /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DEB04CB88B3DD6D6504D275 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				9358345D6E5A57023F165CA4 /* Sources */,
+				0423E08571F8F30F15F1C62C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46638E4F1BA0111D263C2703 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = F432176D8CD006F36B5C20EE /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		35C4A8502C381FFA847C1555 /* Pods-INTULocationManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91D5F912A536DD58CC44FF2D /* Build configuration list for PBXNativeTarget "Pods-INTULocationManager" */;
+			buildPhases = (
+				DC35CB004D7B51156A5BEF6B /* Sources */,
+				9ED2E9DDC5DC6593F0AB4123 /* Frameworks */,
+				C58D988792C95D64250AE583 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-INTULocationManager";
+			productName = "Pods-INTULocationManager";
+			productReference = 24DDD276FF9E2F2B613D16A0 /* libPods-INTULocationManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A090A694DF0677331C74AE03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = A2AF083ABAED3D10490D7BE9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6344CFC0526A59522119FF6E;
+			productRefGroup = BBC927D72EC532EF9AE89EDB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01F8774934F96C6C6D62AA2B /* Pods */,
+				35C4A8502C381FFA847C1555 /* Pods-INTULocationManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9358345D6E5A57023F165CA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40F30FF70356B40AB81AEE47 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC35CB004D7B51156A5BEF6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B188024FF359224A391050CE /* INTULocationManager.m in Sources */,
+				C3186835BE114BB2C128F2E4 /* INTULocationRequest.m in Sources */,
+				F4AB881C629A504ECF539F44 /* Pods-INTULocationManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46638E4F1BA0111D263C2703 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-INTULocationManager";
+			target = 35C4A8502C381FFA847C1555 /* Pods-INTULocationManager */;
+			targetProxy = 9329F084776484A8F4F574C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7BECA8DA46EFE19CC86A8B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8315B73574187BA5D8E8469B /* Pods-INTULocationManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-INTULocationManager/Pods-INTULocationManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A3F23CD45F1EBA928E440048 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F9FDF5CE7B4E79889C1E685 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AF6E2B9BC5075E3977733B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A14AF14F2643D256E2E342DD /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B1E5E93AEB6E199871F41350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B58800158E43C405B4889708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C2371C4FC39AA52058E7A383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8315B73574187BA5D8E8469B /* Pods-INTULocationManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-INTULocationManager/Pods-INTULocationManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DEB04CB88B3DD6D6504D275 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3F23CD45F1EBA928E440048 /* Debug */,
+				AF6E2B9BC5075E3977733B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91D5F912A536DD58CC44FF2D /* Build configuration list for PBXNativeTarget "Pods-INTULocationManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2371C4FC39AA52058E7A383 /* Debug */,
+				7BECA8DA46EFE19CC86A8B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2AF083ABAED3D10490D7BE9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B58800158E43C405B4889708 /* Debug */,
+				B1E5E93AEB6E199871F41350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A090A694DF0677331C74AE03 /* Project object */;
+}
