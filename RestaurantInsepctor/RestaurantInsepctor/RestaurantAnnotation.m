@@ -31,6 +31,14 @@
     return self;
 }
 
+- (NSString *)title {
+    return _name;
+}
+
+- (NSString *)subtitle {
+    return _address;
+}
+
 - (MKMapItem *)mapItem
 {
     NSDictionary *addressDict = @{(NSString *)kABPersonAddressStreetKey:self.address};

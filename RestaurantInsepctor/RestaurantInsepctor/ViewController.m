@@ -36,7 +36,7 @@
 
 
 -(void) setupMap {
-    [self.dataStore getRestaurantsWith:300 CurrentLocation:self.currentLocation Completion:^{
+    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation Completion:^{
         NSLog(@"%@", self.dataStore.results);
         [self plotRestaurants];
     }];
@@ -121,6 +121,8 @@
     static NSString *identifier = @"RestaurantAnnotation";
     MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
     annotationView.annotation = annotation;
+    annotationView.canShowCallout = YES;
+    annotationView.highlighted = YES;
     return annotationView;
 }
 
