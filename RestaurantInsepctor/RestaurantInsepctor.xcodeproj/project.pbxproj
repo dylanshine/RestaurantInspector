@@ -16,6 +16,8 @@
 		FC1AADB61B5D34B6007587D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1AADB41B5D34B6007587D3 /* LaunchScreen.xib */; };
 		FC1AADC21B5D34B6007587D3 /* RestaurantInsepctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADC11B5D34B6007587D3 /* RestaurantInsepctorTests.m */; };
 		FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8078781B5D696600A88301 /* MapKit.framework */; };
+		FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FC80787B1B5D7B7000A88301 /* AFDataStore.m */; };
+		FC80787F1B5D7CDC00A88301 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FC80787E1B5D7CDC00A88301 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		FC1AADC01B5D34B6007587D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1AADC11B5D34B6007587D3 /* RestaurantInsepctorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInsepctorTests.m; sourceTree = "<group>"; };
 		FC8078781B5D696600A88301 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FC80787A1B5D7B7000A88301 /* AFDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDataStore.h; sourceTree = "<group>"; };
+		FC80787B1B5D7B7000A88301 /* AFDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDataStore.m; sourceTree = "<group>"; };
+		FC80787D1B5D7CDC00A88301 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FC80787E1B5D7CDC00A88301 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 		FC1AADA41B5D34B6007587D3 /* RestaurantInsepctor */ = {
 			isa = PBXGroup;
 			children = (
+				FC80787A1B5D7B7000A88301 /* AFDataStore.h */,
+				FC80787B1B5D7B7000A88301 /* AFDataStore.m */,
 				FC1AADA91B5D34B6007587D3 /* AppDelegate.h */,
 				FC1AADAA1B5D34B6007587D3 /* AppDelegate.m */,
 				FC1AADAC1B5D34B6007587D3 /* ViewController.h */,
@@ -126,6 +134,8 @@
 			children = (
 				FC1AADA61B5D34B6007587D3 /* Info.plist */,
 				FC1AADA71B5D34B6007587D3 /* main.m */,
+				FC80787D1B5D7CDC00A88301 /* Constants.h */,
+				FC80787E1B5D7CDC00A88301 /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,8 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC80787F1B5D7CDC00A88301 /* Constants.m in Sources */,
 				FC1AADAE1B5D34B6007587D3 /* ViewController.m in Sources */,
 				FC1AADAB1B5D34B6007587D3 /* AppDelegate.m in Sources */,
+				FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */,
 				FC1AADA81B5D34B6007587D3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

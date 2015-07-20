@@ -9,11 +9,13 @@
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
 #import <INTULocationManager.h>
+#import "AFDataStore.h"
 
 @interface ViewController () <MKMapViewDelegate>
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocation *currentLocation;
+@property (nonatomic) BOOL loaded;
 @end
 
 @implementation ViewController
@@ -21,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    self.locationRequestID = NSNotFound;
     [self.mapView setShowsUserLocation:YES];
     self.mapView.zoomEnabled = NO;
     self.mapView.scrollEnabled = NO;
@@ -28,9 +31,9 @@
     [self startLocationUpdateSubscription];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void) setupMap {
+    [[AFDataStore sharedData] getRestaurantsWith:300 CurrentLocation:self.currentLocation];
 }
 
 #pragma mark - UNTULocationManager
@@ -44,7 +47,12 @@
         if (status == INTULocationStatusSuccess) {
             // A new updated location is available in currentLocation, and achievedAccuracy indicates how accurate this particular location is
             strongSelf.currentLocation = currentLocation;
-            [self centerMapOnLocation:currentLocation];
+            [self centerMapOnLocation:self.currentLocation];
+            if (!strongSelf.loaded) {
+               [strongSelf setupMap];
+                strongSelf.loaded = YES;
+            }
+            
         }
         else {
             // An error occurred, which causes the subscription to cancel automatically (this block will not execute again unless it is used to start a new subscription).
@@ -53,6 +61,7 @@
         }
     }];
 }
+
 
 - (NSString *)getErrorDescription:(INTULocationStatus)status {
     if (status == INTULocationStatusServicesNotDetermined) {
