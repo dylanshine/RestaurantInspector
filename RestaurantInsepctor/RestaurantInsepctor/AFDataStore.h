@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface AFDataStore : NSObject
+@property (nonatomic) NSMutableArray *results;
 +(instancetype)sharedData;
--(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation;
+-(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion;
 @end

@@ -12,7 +12,6 @@
 
 static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
 @interface AFDataStore()
-@property (nonatomic) NSMutableArray *results;
 @end
 
 @implementation AFDataStore
@@ -28,7 +27,7 @@ static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place
     return _sharedData;
 }
 
--(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation {
+-(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion{
     
     NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGoogleURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
     
@@ -40,6 +39,7 @@ static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place
              for (NSDictionary *restaurant in responseObject[@"results"]) {
                  [self.results addObject:restaurant];
              }
+             completion();
              
 //             if (responseObject[@"next_page_token"]) {
 //                 [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
