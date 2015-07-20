@@ -15,6 +15,7 @@
 		FC1AADB31B5D34B6007587D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1AADB21B5D34B6007587D3 /* Images.xcassets */; };
 		FC1AADB61B5D34B6007587D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC1AADB41B5D34B6007587D3 /* LaunchScreen.xib */; };
 		FC1AADC21B5D34B6007587D3 /* RestaurantInsepctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADC11B5D34B6007587D3 /* RestaurantInsepctorTests.m */; };
+		FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8078781B5D696600A88301 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FC1AADBB1B5D34B6007587D3 /* RestaurantInsepctorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantInsepctorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1AADC01B5D34B6007587D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1AADC11B5D34B6007587D3 /* RestaurantInsepctorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantInsepctorTests.m; sourceTree = "<group>"; };
+		FC8078781B5D696600A88301 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */,
 				6027556C844CE529BAE1B9A4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +80,7 @@
 		758D99D90C8E426880E0CFCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC8078781B5D696600A88301 /* MapKit.framework */,
 				04C50F513B65D02BBFDD1CEA /* libPods.a */,
 			);
 			name = Frameworks;
