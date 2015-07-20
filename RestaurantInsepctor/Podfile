@@ -1,2 +1,2 @@
 pod 'INTULocationManager'
-
+pod "AFNetworking", "~> 2.0"
