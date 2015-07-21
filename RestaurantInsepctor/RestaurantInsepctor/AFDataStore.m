@@ -36,7 +36,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     [manager GET:apiURL
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-
+             NSLog(@"%@",responseObject);
              for (NSDictionary *restaurant in responseObject[@"results"]) {
                  [self.results addObject:restaurant];
              }

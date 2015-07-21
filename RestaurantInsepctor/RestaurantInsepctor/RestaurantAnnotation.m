@@ -13,6 +13,7 @@
 #import "FoodTerms.h"
 @interface RestaurantAnnotation()
 @property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
+@property (nonatomic, strong) NSArray *restaurantIcons;
 @end
 
 
@@ -94,7 +95,20 @@
             return [UIImage imageNamed:@"japanese"];
         }
     }
-    return [UIImage imageNamed:@"restaurant"];
+    return [self randomRestaurantIcon];
+}
+
+- (UIImage *)randomRestaurantIcon
+{
+    int randomIndex = arc4random()%[self.restaurantIcons count];
+    return [self.restaurantIcons objectAtIndex:randomIndex];
+}
+
+-(NSArray *)restaurantIcons {
+    if (!_restaurantIcons) {
+        _restaurantIcons = @[[UIImage imageNamed:@"restaurant_blue"],[UIImage imageNamed:@"restaurant_green"],[UIImage imageNamed:@"restaurant_red"],[UIImage imageNamed:@"restaurant_teal"],[UIImage imageNamed:@"restaurant"]];
+    }
+    return _restaurantIcons;
 }
 
 @end
