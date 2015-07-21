@@ -106,7 +106,7 @@
         NSNumber *longitude = restaurant[@"geometry"][@"location"][@"lng"];
         NSString *name = restaurant[@"name"];
         NSString *address = restaurant[@"vicinity"];
-        NSString *placeID = restaurant[@"id"];
+        NSString *placeID = restaurant[@"place_id"];
         
         
         CLLocationCoordinate2D coordinate;
