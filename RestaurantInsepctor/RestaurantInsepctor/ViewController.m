@@ -37,7 +37,6 @@
 
 -(void) setupMap {
     [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation Completion:^{
-        NSLog(@"%@", self.dataStore.results);
         [self plotRestaurants];
     }];
 }
@@ -134,9 +133,9 @@
         UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];
         
-        [detailButton addTarget:self
-                         action:@selector(showDetails)
-               forControlEvents:UIControlEventTouchUpInside];
+//        [detailButton addTarget:self
+//                         action:@selector(showDetails:)
+//               forControlEvents:UIControlEventTouchUpInside];
         
         annotationView.rightCalloutAccessoryView = detailButton;
 
@@ -148,10 +147,13 @@
     return annotationView;
 }
 
-- (void)showDetails {
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
-    NSLog(@"Annotation Click");
-    
+    RestaurantAnnotation *restaurant = (RestaurantAnnotation *)view.annotation;
+    [self.dataStore getDetailsForRestaurantID:restaurant.placeID];
 }
+
+
 
 @end

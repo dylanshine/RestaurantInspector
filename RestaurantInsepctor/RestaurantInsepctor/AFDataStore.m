@@ -10,7 +10,8 @@
 #import <AFNetworking/AFNetworking.h>
 #import "Constants.h"
 
-static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+static const NSString *kGooglePlacesURL = @"https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
+static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/maps/api/place/details/json?placeid=";
 @interface AFDataStore()
 @end
 
@@ -29,7 +30,7 @@ static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place
 
 -(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion{
     
-    NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGoogleURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
+    NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGooglePlacesURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:apiURL
@@ -44,6 +45,27 @@ static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place
 //             if (responseObject[@"next_page_token"]) {
 //                 [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
 //             }
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
+}
+
+- (void)getDetailsForRestaurantID:(NSString *)placeID {
+    NSString *detailURL = [NSString stringWithFormat:@"%@%@&key=%@",kGooglePlaceDetailURL,placeID,kGooglePlacesAPI];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:detailURL
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             
+             
+             NSLog(@"%@",responseObject);
+//             for (NSDictionary *restaurant in responseObject[@"results"]) {
+//                 [self.results addObject:restaurant];
+//             }
+             
+
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);

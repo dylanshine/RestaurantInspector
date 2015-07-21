@@ -13,4 +13,6 @@
 @property (nonatomic) NSMutableArray *results;
 +(instancetype)sharedData;
 -(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion;
+-(void)getDetailsForRestaurantID:(NSString *)placeID;
+
 @end
