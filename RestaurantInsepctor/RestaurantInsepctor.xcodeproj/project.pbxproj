@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6027556C844CE529BAE1B9A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C50F513B65D02BBFDD1CEA /* libPods.a */; };
+		DB2618EB1B5DDAFA00E59DDC /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DB2618EA1B5DDAFA00E59DDC /* Constants.m */; };
 		DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE78D961B5DA042006B2F2D /* RestaurantAnnotation.m */; };
-		DBE78D991B5DA1E2006B2F2D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE78D981B5DA1E2006B2F2D /* Constants.m */; };
 		FC1AADA81B5D34B6007587D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADA71B5D34B6007587D3 /* main.m */; };
 		FC1AADAB1B5D34B6007587D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADAA1B5D34B6007587D3 /* AppDelegate.m */; };
 		FC1AADAE1B5D34B6007587D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADAD1B5D34B6007587D3 /* ViewController.m */; };
@@ -35,9 +35,9 @@
 		04C50F513B65D02BBFDD1CEA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1994DDA3C199BA703CDD0ADC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D837E358DA2DEF7A115F5C4E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		DB2618EA1B5DDAFA00E59DDC /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		DBE78D951B5DA042006B2F2D /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantAnnotation.h; sourceTree = "<group>"; };
 		DBE78D961B5DA042006B2F2D /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantAnnotation.m; sourceTree = "<group>"; };
-		DBE78D981B5DA1E2006B2F2D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FC1AADA21B5D34B6007587D3 /* RestaurantInsepctor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantInsepctor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC1AADA61B5D34B6007587D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC1AADA71B5D34B6007587D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				FC1AADA61B5D34B6007587D3 /* Info.plist */,
 				FC1AADA71B5D34B6007587D3 /* main.m */,
 				FC80787D1B5D7CDC00A88301 /* Constants.h */,
-				DBE78D981B5DA1E2006B2F2D /* Constants.m */,
+				DB2618EA1B5DDAFA00E59DDC /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */,
 				FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */,
 				FC1AADA81B5D34B6007587D3 /* main.m in Sources */,
-				DBE78D991B5DA1E2006B2F2D /* Constants.m in Sources */,
+				DB2618EB1B5DDAFA00E59DDC /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
