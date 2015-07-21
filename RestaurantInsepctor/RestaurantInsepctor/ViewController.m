@@ -12,7 +12,7 @@
 #import "AFDataStore.h"
 #import "RestaurantAnnotation.h"
 
-@interface ViewController () <MKMapViewDelegate>
+@interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
 @property (nonatomic) AFDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataStore = [AFDataStore sharedData];
+    self.dataStore.delegate = self;
     self.mapView.delegate = self;
     self.locationRequestID = NSNotFound;
     [self.mapView setShowsUserLocation:YES];
@@ -36,9 +37,16 @@
 
 
 -(void) setupMap {
-    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation Completion:^{
-        [self plotRestaurants];
-    }];
+//    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation Completion:^{
+//        [self plotRestaurants];
+//    }];
+    
+    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
+}
+
+-(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
+{
+    [self plotRestaurants:restaurants];
 }
 
 #pragma mark - UNTULocationManager
@@ -94,13 +102,10 @@
     
 }
 
--(void)plotRestaurants
+-(void)plotRestaurants:(NSArray *)restaurants
 {
-    for (id<MKAnnotation>annotation in self.mapView.annotations) {
-        [self.mapView removeAnnotation:annotation];
-    }
     
-    for (NSDictionary *restaurant in self.dataStore.results) {
+    for (NSDictionary *restaurant in restaurants) {
         NSNumber *latitude = restaurant[@"geometry"][@"location"][@"lat"];
         NSNumber *longitude = restaurant[@"geometry"][@"location"][@"lng"];
         NSString *name = restaurant[@"name"];

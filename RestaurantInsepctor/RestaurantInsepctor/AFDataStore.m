@@ -28,7 +28,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     return _sharedData;
 }
 
--(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion{
+-(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation {
     
     NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGooglePlacesURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
     
@@ -40,11 +40,13 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
              for (NSDictionary *restaurant in responseObject[@"results"]) {
                  [self.results addObject:restaurant];
              }
-             completion();
              
-//             if (responseObject[@"next_page_token"]) {
-//                 [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
-//             }
+             
+             if (responseObject[@"next_page_token"]) {
+                 [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
+             }
+             
+             [self.delegate dataStore:self didLoadRestaurants:responseObject[@"results"]];
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
@@ -67,33 +69,35 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
          }];
 }
 
-//-(void)getNextPageOfResults:(NSString *)apiURL NextPageToken:(NSString *)token {
-//    
-//    NSString *url = [NSString stringWithFormat:@"%@&pagetoken=%@",apiURL,token];
-//    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//        [manager GET:url
-//          parameters:nil
-//             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//                 
-//                 
-//                 for (NSDictionary *restaurant in responseObject[@"results"]) {
-//                     [self.results addObject:restaurant];
-//                 }
-//                 
-//                 NSLog(@"Next Token: %@",responseObject[@"next_page_token"]);
-//                 if (responseObject[@"next_page_token"]) {
-//                     [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
-//                 }
-//                 
-//             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//                 NSLog(@"Error: %@", error);
-//             }];
-//    });
-//    
-//
-//}
+-(void)getNextPageOfResults:(NSString *)apiURL NextPageToken:(NSString *)token {
+    
+    NSString *url = [NSString stringWithFormat:@"%@&pagetoken=%@",apiURL,token];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager GET:url
+          parameters:nil
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 
+                 
+                 for (NSDictionary *restaurant in responseObject[@"results"]) {
+                     [self.results addObject:restaurant];
+                 }
+                 
+                 NSLog(@"Next Token: %@",responseObject[@"next_page_token"]);
+                 if (responseObject[@"next_page_token"]) {
+                     [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
+                 }
+                 
+                 [self.delegate dataStore:self didLoadRestaurants:responseObject[@"results"]];
+                 
+             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 NSLog(@"Error: %@", error);
+             }];
+    });
+    
+
+}
 
 //NYC OPEN DATA
 -(void)getRestaurantInfoWithCompletion:(NSString *)phoneNumber completionBlock:(void(^)(NSArray *))completionBlock
