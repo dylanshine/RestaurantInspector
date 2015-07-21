@@ -33,6 +33,8 @@
     self.mapView.scrollEnabled = NO;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
+    
+    
 }
 
 

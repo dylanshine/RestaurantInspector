@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6027556C844CE529BAE1B9A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C50F513B65D02BBFDD1CEA /* libPods.a */; };
 		DB0139ED1B5E8BFB0029B30B /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0139EC1B5E8BFB0029B30B /* Restaurant.m */; };
+		DBC0B2A11B5EE3AF00D7D393 /* RestaurantGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0B2A01B5EE3AF00D7D393 /* RestaurantGrade.m */; };
+		DBC0B2A41B5EE3C400D7D393 /* RestaurantViolation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0B2A31B5EE3C400D7D393 /* RestaurantViolation.m */; };
 		DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE78D961B5DA042006B2F2D /* RestaurantAnnotation.m */; };
 		DBE78D991B5DA1E2006B2F2D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = DBE78D981B5DA1E2006B2F2D /* Constants.m */; };
 		FC1AADA81B5D34B6007587D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADA71B5D34B6007587D3 /* main.m */; };
@@ -39,6 +41,10 @@
 		D837E358DA2DEF7A115F5C4E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DB0139EB1B5E8BFB0029B30B /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		DB0139EC1B5E8BFB0029B30B /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		DBC0B29F1B5EE3AF00D7D393 /* RestaurantGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantGrade.h; sourceTree = "<group>"; };
+		DBC0B2A01B5EE3AF00D7D393 /* RestaurantGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantGrade.m; sourceTree = "<group>"; };
+		DBC0B2A21B5EE3C400D7D393 /* RestaurantViolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantViolation.h; sourceTree = "<group>"; };
+		DBC0B2A31B5EE3C400D7D393 /* RestaurantViolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantViolation.m; sourceTree = "<group>"; };
 		DBE78D951B5DA042006B2F2D /* RestaurantAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantAnnotation.h; sourceTree = "<group>"; };
 		DBE78D961B5DA042006B2F2D /* RestaurantAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantAnnotation.m; sourceTree = "<group>"; };
 		DBE78D981B5DA1E2006B2F2D /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -134,6 +140,10 @@
 				DBE78D961B5DA042006B2F2D /* RestaurantAnnotation.m */,
 				DB0139EB1B5E8BFB0029B30B /* Restaurant.h */,
 				DB0139EC1B5E8BFB0029B30B /* Restaurant.m */,
+				DBC0B29F1B5EE3AF00D7D393 /* RestaurantGrade.h */,
+				DBC0B2A01B5EE3AF00D7D393 /* RestaurantGrade.m */,
+				DBC0B2A21B5EE3C400D7D393 /* RestaurantViolation.h */,
+				DBC0B2A31B5EE3C400D7D393 /* RestaurantViolation.m */,
 				FC1AADAF1B5D34B6007587D3 /* Main.storyboard */,
 				FC1AADB21B5D34B6007587D3 /* Images.xcassets */,
 				FC1AADB41B5D34B6007587D3 /* LaunchScreen.xib */,
@@ -309,9 +319,11 @@
 			files = (
 				FC1AADAE1B5D34B6007587D3 /* ViewController.m in Sources */,
 				FCE7C5401B5EBC220047883A /* FoodTerms.m in Sources */,
+				DBC0B2A41B5EE3C400D7D393 /* RestaurantViolation.m in Sources */,
 				DB0139ED1B5E8BFB0029B30B /* Restaurant.m in Sources */,
 				FC1AADAB1B5D34B6007587D3 /* AppDelegate.m in Sources */,
 				DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */,
+				DBC0B2A11B5EE3AF00D7D393 /* RestaurantGrade.m in Sources */,
 				FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */,
 				FC1AADA81B5D34B6007587D3 /* main.m in Sources */,
 				DBE78D991B5DA1E2006B2F2D /* Constants.m in Sources */,
