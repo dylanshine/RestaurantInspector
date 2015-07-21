@@ -72,7 +72,7 @@
         }
         
         if ([[FoodTerms cafe] containsObject:word]) {
-            return [UIImage imageNamed:@"cafe"];
+            return [UIImage imageNamed:@"coffee"];
         }
         
         if ([[FoodTerms bar] containsObject:word]) {
@@ -94,6 +94,26 @@
         if ([[FoodTerms japanese] containsObject:word]) {
             return [UIImage imageNamed:@"japanese"];
         }
+        
+        if ([[FoodTerms italian] containsObject:word]) {
+            return [UIImage imageNamed:@"italian"];
+        }
+        
+        if ([[FoodTerms icecream] containsObject:word]) {
+            return [UIImage imageNamed:@"icecream"];
+        }
+        
+        if ([[FoodTerms juice] containsObject:word]) {
+            return [UIImage imageNamed:@"juice"];
+        }
+        
+        if ([[FoodTerms steakhouse] containsObject:word]) {
+            return [UIImage imageNamed:@"steakhouse"];
+        }
+        
+        if ([[FoodTerms fish] containsObject:word]) {
+            return [UIImage imageNamed:@"fish"];
+        }
     }
     return [self randomRestaurantIcon];
 }
@@ -106,7 +126,7 @@
 
 -(NSArray *)restaurantIcons {
     if (!_restaurantIcons) {
-        _restaurantIcons = @[[UIImage imageNamed:@"restaurant_blue"],[UIImage imageNamed:@"restaurant_green"],[UIImage imageNamed:@"restaurant_red"],[UIImage imageNamed:@"restaurant_teal"],[UIImage imageNamed:@"restaurant"]];
+        _restaurantIcons = @[[UIImage imageNamed:@"restaurant_blue"],[UIImage imageNamed:@"restaurant_green"],[UIImage imageNamed:@"restaurant_red"],[UIImage imageNamed:@"restaurant_teal"],[UIImage imageNamed:@"restaurant_orange"]];
     }
     return _restaurantIcons;
 }
