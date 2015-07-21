@@ -51,7 +51,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
          }];
 }
 
-- (void)getDetailsForRestaurantID:(NSString *)placeID {
+- (void)getDetailsForRestaurantID:(NSString *)placeID Completion:(void (^)(NSString *))completion{
     NSString *detailURL = [NSString stringWithFormat:@"%@%@&key=%@",kGooglePlaceDetailURL,placeID,kGooglePlacesAPI];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -59,12 +59,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              
-             
-             NSLog(@"%@",responseObject);
-//             for (NSDictionary *restaurant in responseObject[@"results"]) {
-//                 [self.results addObject:restaurant];
-//             }
-             
+             completion(responseObject[@"result"][@"formatted_phone_number"]);
 
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -99,6 +94,20 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
 //    
 //
 //}
+
+//NYC OPEN DATA
+-(void)getRestaurantInfoWithCompletion:(NSString *)phoneNumber completionBlock:(void(^)(NSArray *))completionBlock
+{
+    NSString *nycOpenDataUrl = [NSString stringWithFormat:@"https://data.cityofnewyork.us/resource/9w7m-hzhe.json?%@&phone=%@",kNycOpenDataAPI,phoneNumber];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:nycOpenDataUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"Nyc Success: %@",responseObject);
+        completionBlock(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"Failure:%@",error.description);
+    }];
+    
+}
 
 
 @end

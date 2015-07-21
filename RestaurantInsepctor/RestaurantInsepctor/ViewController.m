@@ -149,9 +149,16 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
-    RestaurantAnnotation *restaurant = (RestaurantAnnotation *)view.annotation;
-    [self.dataStore getDetailsForRestaurantID:restaurant.placeID];
+
+    RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
+    [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
+        restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
+        [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
+                                        completionBlock:^(NSArray *results) {
+                                            restaurantAnnotation.restaurant.nycData = results;
+                                            NSLog(@"%@",restaurantAnnotation.restaurant.nycData);
+        }];
+    }];
 }
 
 
