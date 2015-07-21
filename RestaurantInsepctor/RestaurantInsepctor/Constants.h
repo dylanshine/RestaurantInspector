@@ -10,4 +10,5 @@
 
 @interface Constants : NSObject
 extern NSString *const kGooglePlacesAPI;
+extern NSString *const kNycOpenDataAPI;
 @end
