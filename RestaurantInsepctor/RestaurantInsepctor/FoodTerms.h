@@ -16,4 +16,10 @@
 +(NSSet *)pizza;
 +(NSSet *)chinese;
 +(NSSet *)japanese;
++(NSSet *)italian;
++(NSSet *)icecream;
++(NSSet *)juice;
++(NSSet *)sandwich;
++(NSSet *)steakhouse;
++(NSSet *)fish;
 @end
