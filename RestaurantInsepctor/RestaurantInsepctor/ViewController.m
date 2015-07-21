@@ -147,16 +147,20 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-
+    
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
-    [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
-        restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
-        [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
-                                        completionBlock:^(NSArray *results) {
-                                            restaurantAnnotation.restaurant.nycData = results;
-                                            NSLog(@"%@",restaurantAnnotation.restaurant.nycData);
+    
+    if (!restaurantAnnotation.restaurant) {
+        [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
+            restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
+            [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
+                                            completionBlock:^(NSArray *results) {
+                                                restaurantAnnotation.restaurant.nycData = results;
+                                                NSLog(@"%@",restaurantAnnotation.restaurant.nycData);
+                                            }];
         }];
-    }];
+    }
+    
 }
 
 
