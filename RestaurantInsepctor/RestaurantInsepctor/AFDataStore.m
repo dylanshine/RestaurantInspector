@@ -29,7 +29,7 @@ static const NSString *kGoogleURL = @"https://maps.googleapis.com/maps/api/place
 
 -(void)getRestaurantsWith:(NSInteger)radius CurrentLocation:(CLLocation *)currentLocation Completion:(void (^)())completion{
     
-    NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=food&key=%@", kGoogleURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
+    NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGoogleURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:apiURL
