@@ -133,10 +133,6 @@
         UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];
         
-//        [detailButton addTarget:self
-//                         action:@selector(showDetails:)
-//               forControlEvents:UIControlEventTouchUpInside];
-        
         annotationView.rightCalloutAccessoryView = detailButton;
 
     } else {
