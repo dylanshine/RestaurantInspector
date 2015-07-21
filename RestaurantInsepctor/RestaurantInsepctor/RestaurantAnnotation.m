@@ -10,21 +10,20 @@
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
 @interface RestaurantAnnotation()
-@property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-@property (nonatomic, strong) NSString *address;
 @end
 
 
 @implementation RestaurantAnnotation
 
--(instancetype)initWithName:(NSString *)name Coordinate:(CLLocationCoordinate2D)coordinate Address:(NSString *)address
+-(instancetype)initWithName:(NSString *)name Coordinate:(CLLocationCoordinate2D)coordinate Address:(NSString *)address Place:(NSString *)place
 {
 
     
     if (self =  [super init]) {
         _name = name;
         _address = address;
+        _placeID = place;
         self.coordinate = coordinate;
     }
     

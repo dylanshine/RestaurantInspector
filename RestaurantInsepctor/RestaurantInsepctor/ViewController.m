@@ -106,12 +106,13 @@
         NSNumber *longitude = restaurant[@"geometry"][@"location"][@"lng"];
         NSString *name = restaurant[@"name"];
         NSString *address = restaurant[@"vicinity"];
+        NSString *placeID = restaurant[@"id"];
         
         
         CLLocationCoordinate2D coordinate;
         coordinate.latitude = latitude.doubleValue;
         coordinate.longitude = longitude.doubleValue;
-        RestaurantAnnotation *annotation = [[RestaurantAnnotation alloc] initWithName:name Coordinate:coordinate Address:address];
+        RestaurantAnnotation *annotation = [[RestaurantAnnotation alloc] initWithName:name Coordinate:coordinate Address:address Place:placeID];
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -120,10 +121,38 @@
 {
     static NSString *identifier = @"RestaurantAnnotation";
     MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    annotationView.annotation = annotation;
-    annotationView.canShowCallout = YES;
-    annotationView.highlighted = YES;
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+       return nil;
+    }
+    
+    
+    if(!annotationView) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        annotationView.canShowCallout = YES;
+        annotationView.highlighted = YES;
+        
+        UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [detailButton setTitle:annotation.title forState:UIControlStateNormal];
+        
+        [detailButton addTarget:self
+                         action:@selector(showDetails)
+               forControlEvents:UIControlEventTouchUpInside];
+        
+        annotationView.rightCalloutAccessoryView = detailButton;
+
+    } else {
+        annotationView.annotation = annotation;
+
+    }
+    
     return annotationView;
+}
+
+- (void)showDetails {
+    
+    NSLog(@"Annotation Click");
+    
 }
 
 @end
