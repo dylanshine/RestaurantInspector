@@ -1,5 +1,5 @@
 //
-//  Restaurant.h
+//  RestaurantRating.h
 //  RestaurantInsepctor
 //
 //  Created by Mason Macias on 7/21/15.
@@ -8,16 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Restaurant : NSObject
-@property (nonatomic, strong) NSString *phoneNumber;
+@interface RestaurantGrade : NSObject
+@property (nonatomic,strong) NSString *name;
 @property (nonatomic, strong) NSString *grade;
 @property (nonatomic, strong) NSString *averageGrade;
 @property (nonatomic, strong) NSString *cuisineDescription;
 
--(instancetype)initWithPhoneNumber:(NSString *)phoneNumber;
--(NSString *)formattedPhoneNumber;
-+(NSString *)mostRecentScore:(NSArray *)restaurantInspections;
-+(NSString *)convertScoreToGrade:(NSString *)score;
-+(NSString *)createAverage:(NSArray *)restaurantInspections;
 
+-(instancetype)initWithName:(NSString *)name CuisineDescription:(NSString *)cuisineDescription Grade:(NSString *)grade AverageGrade:(NSString *)averageGrade;
++(NSString *)convertScoreToGrade:(NSString *)score;
++(NSString *)mostRecentScore:(NSArray *)restaurantInspections;
++(NSString *)createAverage:(NSArray *)restaurantInspections;
 @end

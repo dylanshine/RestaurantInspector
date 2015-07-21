@@ -1,28 +1,28 @@
 //
-//  Restaurant.m
+//  RestaurantRating.m
 //  RestaurantInsepctor
 //
 //  Created by Mason Macias on 7/21/15.
 //  Copyright (c) 2015 Dylan Shine. All rights reserved.
 //
 
-#import "Restaurant.h"
+#import "RestaurantGrade.h"
+#import <Asterism/Asterism.h>
 
-@implementation Restaurant
--(instancetype)initWithPhoneNumber:(NSString *)phoneNumber {
+@implementation RestaurantGrade
+
+-(instancetype)initWithName:(NSString *)name CuisineDescription:(NSString *)cuisineDescription Grade:(NSString *)grade AverageGrade:(NSString *)averageGrade
+{
     self = [super init];
+    
     if (self) {
-        _phoneNumber = phoneNumber;
+        _name = name;
+        _cuisineDescription = cuisineDescription;
+        _averageGrade = averageGrade;
+        _grade = grade;
     }
     
     return self;
-}
-
-- (NSString *)formattedPhoneNumber {
-    NSArray *phoneArray = [self.phoneNumber componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]];
-    
-    NSString *formattedPhoneNumber = [phoneArray componentsJoinedByString:@""];
-    return formattedPhoneNumber;
 }
 
 +(NSString *)createAverage:(NSArray *)restaurantInspections
@@ -37,7 +37,7 @@
     for (NSNumber *score in scores) {
         totalOfScores += score.integerValue;
     }
-    
+
     return [NSString stringWithFormat:@"%lu", totalOfScores /scores.count];
     
 }
@@ -75,7 +75,7 @@
     
     for (NSString *date in inspectionDatesMut)
     {
-        NSDate *dateFromString = [dateFormatter dateFromString:date];
+       NSDate *dateFromString = [dateFormatter dateFromString:date];
         [formattedDates addObject:dateFromString];
     }
     
@@ -84,5 +84,6 @@
     return [NSString stringWithFormat:@"%@",mostRecentDate];
     
 }
+
 
 @end
