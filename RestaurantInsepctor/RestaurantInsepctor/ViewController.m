@@ -126,7 +126,6 @@
        return nil;
     }
     
-    
     if(!annotationView) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
         annotationView.canShowCallout = YES;

@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
 @interface RestaurantAnnotation()
-@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
 @end
 
 
@@ -24,18 +24,22 @@
         _name = name;
         _address = address;
         _placeID = place;
-        self.coordinate = coordinate;
+        _theCoordinate = coordinate;
     }
     
     return self;
 }
 
 - (NSString *)title {
-    return _name;
+    return self.name;
 }
 
 - (NSString *)subtitle {
-    return _address;
+    return self.address;
+}
+
+- (CLLocationCoordinate2D)coordinate {
+        return self.theCoordinate;
 }
 
 - (MKMapItem *)mapItem
@@ -46,7 +50,7 @@
     
     MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
     
-    mapItem.name = self.name;
+    mapItem.name = self.title;
     
     return mapItem;
 }
