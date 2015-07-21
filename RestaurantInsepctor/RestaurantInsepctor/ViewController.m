@@ -126,9 +126,11 @@
     }
     
     if(!annotationView) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        RestaurantAnnotation *restaurant = (RestaurantAnnotation *)annotationView.annotation;
         annotationView.canShowCallout = YES;
         annotationView.highlighted = YES;
+        annotationView.image = [restaurant setPinImage] ;
         
         UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];

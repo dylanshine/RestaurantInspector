@@ -20,6 +20,7 @@
 		FC1AADC21B5D34B6007587D3 /* RestaurantInsepctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC1AADC11B5D34B6007587D3 /* RestaurantInsepctorTests.m */; };
 		FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8078781B5D696600A88301 /* MapKit.framework */; };
 		FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FC80787B1B5D7B7000A88301 /* AFDataStore.m */; };
+		FCE7C5401B5EBC220047883A /* FoodTerms.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C53F1B5EBC220047883A /* FoodTerms.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		FC80787A1B5D7B7000A88301 /* AFDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDataStore.h; sourceTree = "<group>"; };
 		FC80787B1B5D7B7000A88301 /* AFDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDataStore.m; sourceTree = "<group>"; };
 		FC80787D1B5D7CDC00A88301 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FCE7C53E1B5EBC220047883A /* FoodTerms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTerms.h; sourceTree = "<group>"; };
+		FCE7C53F1B5EBC220047883A /* FoodTerms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTerms.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				FC1AADB21B5D34B6007587D3 /* Images.xcassets */,
 				FC1AADB41B5D34B6007587D3 /* LaunchScreen.xib */,
 				FC1AADA51B5D34B6007587D3 /* Supporting Files */,
+				FCE7C53E1B5EBC220047883A /* FoodTerms.h */,
+				FCE7C53F1B5EBC220047883A /* FoodTerms.m */,
 			);
 			path = RestaurantInsepctor;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1AADAE1B5D34B6007587D3 /* ViewController.m in Sources */,
+				FCE7C5401B5EBC220047883A /* FoodTerms.m in Sources */,
 				DB0139ED1B5E8BFB0029B30B /* Restaurant.m in Sources */,
 				FC1AADAB1B5D34B6007587D3 /* AppDelegate.m in Sources */,
 				DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */,

@@ -6,9 +6,11 @@
 //  Copyright (c) 2015 Dylan Shine. All rights reserved.
 //
 
+#import <Asterism/Asterism.h>
 #import "RestaurantAnnotation.h"
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
+#import "FoodTerms.h"
 @interface RestaurantAnnotation()
 @property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
 @end
@@ -53,6 +55,46 @@
     mapItem.name = self.title;
     
     return mapItem;
+}
+
+-(UIImage *)setPinImage {
+    NSArray *nameArray = [self.name componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+   nameArray = ASTMap(nameArray, ^id(id obj) {
+        return [obj lowercaseString];
+    });
+    
+    for (NSString *word in nameArray) {
+        
+        if ([[FoodTerms fastFood] containsObject:word]) {
+            return [UIImage imageNamed:@"fastfood"];
+        }
+        
+        if ([[FoodTerms cafe] containsObject:word]) {
+            return [UIImage imageNamed:@"cafe"];
+        }
+        
+        if ([[FoodTerms bar] containsObject:word]) {
+            return [UIImage imageNamed:@"bar"];
+        }
+        
+        if ([[FoodTerms mexican] containsObject:word]) {
+            return [UIImage imageNamed:@"mexican"];
+        }
+        
+        if ([[FoodTerms pizza] containsObject:word]) {
+            return [UIImage imageNamed:@"pizza"];
+        }
+        
+        if ([[FoodTerms chinese] containsObject:word]) {
+            return [UIImage imageNamed:@"chinese"];
+        }
+        
+        if ([[FoodTerms japanese] containsObject:word]) {
+            return [UIImage imageNamed:@"japanese"];
+        }
+    }
+    return [UIImage imageNamed:@"restaurant"];
 }
 
 @end

@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// Asterism
+#define COCOAPODS_POD_AVAILABLE_Asterism
+#define COCOAPODS_VERSION_MAJOR_Asterism 1
+#define COCOAPODS_VERSION_MINOR_Asterism 0
+#define COCOAPODS_VERSION_PATCH_Asterism 0
+
 // INTULocationManager
 #define COCOAPODS_POD_AVAILABLE_INTULocationManager
 #define COCOAPODS_VERSION_MAJOR_INTULocationManager 3
