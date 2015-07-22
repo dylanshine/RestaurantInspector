@@ -30,7 +30,7 @@
     self.locationRequestID = NSNotFound;
     [self.mapView setShowsUserLocation:YES];
     self.mapView.zoomEnabled = NO;
-    self.mapView.scrollEnabled = NO;
+    self.mapView.scrollEnabled = YES;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
 }
@@ -60,8 +60,8 @@
         if (status == INTULocationStatusSuccess) {
             // A new updated location is available in currentLocation, and achievedAccuracy indicates how accurate this particular location is
             strongSelf.currentLocation = currentLocation;
-            [self centerMapOnLocation:self.currentLocation];
             if (!strongSelf.loaded) {
+                [self centerMapOnLocation:self.currentLocation];
                [strongSelf setupMap];
                 strongSelf.loaded = YES;
             }
@@ -171,5 +171,8 @@
 }
 
 
+- (IBAction)centerMapOnUserLocation:(UIButton *)sender {
+    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
+}
 
 @end
