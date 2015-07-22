@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
-                                <rect key="frame" x="-400" y="1200" width="360" height="240"/>
+                                <rect key="frame" x="-400" y="960" width="360" height="240"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.4" id="MXJ-CZ-bir"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
-                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="top" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-80" id="SPc-ye-Bx9"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
                         </constraints>

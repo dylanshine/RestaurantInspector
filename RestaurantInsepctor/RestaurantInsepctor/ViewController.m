@@ -53,42 +53,23 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [UIView animateWithDuration:3
+    [UIView animateWithDuration:5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          
-                         [self.view removeConstraint:self.ralphVerticalSpace];
-                         [self.view removeConstraint:self.ralphHorizontalSpace];
-
-self.ralphXCoordinate = [NSLayoutConstraint constraintWithItem:self.ralph
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.view
-                                                                    attribute:NSLayoutAttributeCenterX
-                                                                   multiplier:0.4
-                                                                     constant:0];
-self.ralphYCoordinate = [NSLayoutConstraint constraintWithItem:self.ralph
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                    relatedBy:NSLayoutRelationEqual
-                                                                       toItem:self.view
-                                                                    attribute:NSLayoutAttributeCenterY
-                                                                   multiplier:1.6
-                                                                     constant:0];
-                         [self.view addConstraint:self.ralphXCoordinate];
-                         [self.view addConstraint:self.ralphYCoordinate];
+                         self.ralphHorizontalSpace.constant = -50;
+                         self.ralphVerticalSpace.constant = 0;
+                         
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                  [UIView animateWithDuration:2
+                  [UIView animateWithDuration:5
                                    animations:^{
-//                                       [self.view removeConstraint:self.ralphXCoordinate];
-//                                       [self.view removeConstraint:self.ralphYCoordinate];
-//                                       self.ralphVerticalSpace.constant = 600;
-//                                       self.ralphHorizontalSpace.constant = -400;
-//                                       [self.view addConstraint:self.ralphHorizontalSpace];
-//                                       [self.view addConstraint:self.ralphVerticalSpace];
-//                                       
+
+                                       self.ralphVerticalSpace.constant = 600;
+                                       self.ralphHorizontalSpace.constant = -400;
+                                   
                                        [self.view layoutIfNeeded];
                                    }
                                    completion:^(BOOL finished) {
