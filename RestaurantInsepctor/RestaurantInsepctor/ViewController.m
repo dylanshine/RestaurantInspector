@@ -14,11 +14,19 @@
 #import "SVProgressHUD.h"
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *ralph;
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
 @property (nonatomic) AFDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocation *currentLocation;
 @property (nonatomic) BOOL loaded;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphVerticalSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphHorizontalSpace;
+@property (weak, nonatomic) NSLayoutConstraint *ralphXCoordinate;
+@property (weak, nonatomic) NSLayoutConstraint *ralphYCoordinate;
+
 @end
 
 @implementation ViewController
@@ -34,6 +42,61 @@
     self.mapView.scrollEnabled = YES;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
+    
+    
+    
+
+    
+    NSLog(@"View is done loading");
+    
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [UIView animateWithDuration:3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         [self.view removeConstraint:self.ralphVerticalSpace];
+                         [self.view removeConstraint:self.ralphHorizontalSpace];
+
+self.ralphXCoordinate = [NSLayoutConstraint constraintWithItem:self.ralph
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.view
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                   multiplier:0.4
+                                                                     constant:0];
+self.ralphYCoordinate = [NSLayoutConstraint constraintWithItem:self.ralph
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:self.view
+                                                                    attribute:NSLayoutAttributeCenterY
+                                                                   multiplier:1.6
+                                                                     constant:0];
+                         [self.view addConstraint:self.ralphXCoordinate];
+                         [self.view addConstraint:self.ralphYCoordinate];
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                  [UIView animateWithDuration:2
+                                   animations:^{
+//                                       [self.view removeConstraint:self.ralphXCoordinate];
+//                                       [self.view removeConstraint:self.ralphYCoordinate];
+//                                       self.ralphVerticalSpace.constant = 600;
+//                                       self.ralphHorizontalSpace.constant = -400;
+//                                       [self.view addConstraint:self.ralphHorizontalSpace];
+//                                       [self.view addConstraint:self.ralphVerticalSpace];
+//                                       
+                                       [self.view layoutIfNeeded];
+                                   }
+                                   completion:^(BOOL finished) {
+                                       NSLog(@"Finished");
+                                   }];
+    }];
+    
+    
 }
 
 
@@ -59,9 +122,9 @@
             strongSelf.currentLocation = currentLocation;
             if (!strongSelf.loaded) {
                 [self centerMapOnLocation:self.currentLocation];
-               [strongSelf setupMap];
+//               [strongSelf setupMap];
                 strongSelf.loaded = YES;
-                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+//                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
             }
             
         }
