@@ -12,7 +12,6 @@
 #import <AddressBook/AddressBook.h>
 #import "FoodTerms.h"
 @interface RestaurantAnnotation()
-@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
 @property (nonatomic, strong) NSArray *restaurantIcons;
 @end
 
