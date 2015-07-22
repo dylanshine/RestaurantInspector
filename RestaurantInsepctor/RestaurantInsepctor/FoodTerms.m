@@ -11,7 +11,7 @@
 @implementation FoodTerms
 +(NSSet *)fastFood {
     
-    NSSet *fastFoodSet = [[NSSet alloc] initWithArray:@[@"mcdonald's",@"burger",@"shake",@"shack",@"fries",@"burgers",@"wings",@"checkers",@"fried",@"papaya",@"castle",@"arby's",@"wendy's"]];
+    NSSet *fastFoodSet = [[NSSet alloc] initWithArray:@[@"mcdonald's",@"burger",@"shake",@"shack",@"fries",@"burgers",@"wings",@"checkers",@"fried",@"papaya",@"castle",@"arby's",@"wendy's",@"diner"]];
     return fastFoodSet;
 }
 
@@ -21,7 +21,7 @@
 }
 
 +(NSSet *)bar {
-    NSSet *barSet = [[NSSet alloc] initWithArray:@[@"bar",@"pub",@"wine",@"winery"]];
+    NSSet *barSet = [[NSSet alloc] initWithArray:@[@"bar",@"pub"]];
     return barSet;
 }
 
@@ -75,6 +75,42 @@
     NSSet *fishSet = [[NSSet alloc] initWithArray:@[@"fish",@"sea",@"seafood",@"ocean",@"mussels",@"oysters",@"oyster",@"lobster",@"crab",@"catch",@"fin",@"fishbar",@"hook",@"bait",@"pescaderia",@"claw",@"clam",@"dock",@"bonefish"]];
     return fishSet;
 }
+
++(NSSet *)wine {
+    NSSet *wineSet = [[NSSet alloc] initWithArray:@[@"wine",@"winery",@"winebar",@"winecellar",@"wines",@"vino"]];
+    return wineSet;
+}
+
++(NSSet *)thai {
+    NSSet *thaiSet = [[NSSet alloc] initWithArray:@[@"thai",@"siam",@"bangkok",@"tiam",@"thailand"]];
+    return thaiSet;
+}
+
++(NSSet *)korean {
+    NSSet *koreanSet = [[NSSet alloc] initWithArray:@[@"korean",@"guksu",@"kimchi",@"anju",@"spice",@"jaiya"]];
+    return koreanSet;
+}
+
++(NSSet *)tapas {
+    NSSet *tapasSet = [[NSSet alloc] initWithArray:@[@"tapas"]];
+    return tapasSet;
+}
+
++(NSSet *)mediterranean {
+    NSSet *mediterraneanSet = [[NSSet alloc] initWithArray:@[@"mediterranean"]];
+    return mediterraneanSet;
+}
+
++(NSSet *)indian {
+    NSSet *indianSet = [[NSSet alloc] initWithArray:@[@"indian",@"kati",@"india"]];
+    return indianSet;
+}
+
++(NSSet *)vegetarian {
+    NSSet *vegetarianSet = [[NSSet alloc] initWithArray:@[@"vegetarian"]];
+    return vegetarianSet;
+}
+
 
 
 @end

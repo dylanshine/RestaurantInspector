@@ -22,4 +22,11 @@
 +(NSSet *)sandwich;
 +(NSSet *)steakhouse;
 +(NSSet *)fish;
++(NSSet *)wine;
++(NSSet *)thai;
++(NSSet *)korean;
++(NSSet *)tapas;
++(NSSet *)mediterranean;
++(NSSet *)indian;
++(NSSet *)vegetarian;
 @end
