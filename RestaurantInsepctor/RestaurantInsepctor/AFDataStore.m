@@ -9,6 +9,7 @@
 #import "AFDataStore.h"
 #import <AFNetworking/AFNetworking.h>
 #import "Constants.h"
+#import "SVProgressHUD.h"
 
 static const NSString *kGooglePlacesURL = @"https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
 static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/maps/api/place/details/json?placeid=";
@@ -44,6 +45,8 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
              
              if (responseObject[@"next_page_token"]) {
                  [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
+             } else {
+                 [SVProgressHUD dismiss];
              }
              
              [self.delegate dataStore:self didLoadRestaurants:responseObject[@"results"]];
@@ -84,9 +87,10 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
                      [self.results addObject:restaurant];
                  }
                  
-                 NSLog(@"Next Token: %@",responseObject[@"next_page_token"]);
                  if (responseObject[@"next_page_token"]) {
                      [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
+                 } else {
+                     [SVProgressHUD dismiss];
                  }
                  
                  [self.delegate dataStore:self didLoadRestaurants:responseObject[@"results"]];

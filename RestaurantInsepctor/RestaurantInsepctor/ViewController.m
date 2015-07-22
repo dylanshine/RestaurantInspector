@@ -11,6 +11,7 @@
 #import <INTULocationManager.h>
 #import "AFDataStore.h"
 #import "RestaurantAnnotation.h"
+#import "SVProgressHUD.h"
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
@@ -37,10 +38,6 @@
 
 
 -(void) setupMap {
-//    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation Completion:^{
-//        [self plotRestaurants];
-//    }];
-    
     [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
 }
 
@@ -64,6 +61,7 @@
                 [self centerMapOnLocation:self.currentLocation];
                [strongSelf setupMap];
                 strongSelf.loaded = YES;
+                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
             }
             
         }
