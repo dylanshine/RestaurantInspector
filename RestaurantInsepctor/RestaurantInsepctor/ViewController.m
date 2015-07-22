@@ -167,6 +167,7 @@
                                                     [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
+                                                [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
                                             }];
         }];
     }

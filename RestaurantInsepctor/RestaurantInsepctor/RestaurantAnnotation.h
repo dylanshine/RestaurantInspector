@@ -11,6 +11,7 @@
 #import "Restaurant.h"
 @interface RestaurantAnnotation : NSObject <MKAnnotation>
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) CLLocationCoordinate2D theCoordinate;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic) NSString *placeID;
 @property (nonatomic) Restaurant *restaurant;
