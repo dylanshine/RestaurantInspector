@@ -46,7 +46,7 @@
 }
 
 +(NSSet *)italian {
-    NSSet *italianSet = [[NSSet alloc] initWithArray:@[@"italian",@"pasta",@"ristorante"]];
+    NSSet *italianSet = [[NSSet alloc] initWithArray:@[@"italian",@"pasta",@"ristorante",@"trattoria"]];
     return italianSet;
 }
 
