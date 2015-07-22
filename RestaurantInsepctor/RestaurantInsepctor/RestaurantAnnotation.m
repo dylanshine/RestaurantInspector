@@ -67,8 +67,8 @@
     
     for (NSString *word in nameArray) {
         
-        if ([[FoodTerms mexican] containsObject:word]) {
-            return [UIImage imageNamed:@"mexican"];
+        if ([[FoodTerms latin] containsObject:word]) {
+            return [UIImage imageNamed:@"latin"];
         } else if ([[FoodTerms pizza] containsObject:word]) {
             return [UIImage imageNamed:@"pizza"];
         } else if ([[FoodTerms chinese] containsObject:word]) {

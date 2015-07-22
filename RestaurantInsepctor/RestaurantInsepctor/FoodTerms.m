@@ -25,9 +25,9 @@
     return barSet;
 }
 
-+(NSSet *)mexican {
-    NSSet *mexicanSet = [[NSSet alloc] initWithArray:@[@"mexican",@"mexicano",@"taco",@"cantina"]];
-    return mexicanSet;
++(NSSet *)latin {
+    NSSet *latinSet = [[NSSet alloc] initWithArray:@[@"mexican",@"mexicano",@"taco",@"cantina",@"cuba",@"cuban"]];
+    return latinSet;
 }
 
 +(NSSet *)pizza {
@@ -36,7 +36,7 @@
 }
 
 +(NSSet *)chinese {
-    NSSet *chineseSet = [[NSSet alloc] initWithArray:@[@"china",@"chinese",@"wok"]];
+    NSSet *chineseSet = [[NSSet alloc] initWithArray:@[@"china",@"chinese",@"wok",@"yips",@"oriental"]];
     return chineseSet;
 }
 

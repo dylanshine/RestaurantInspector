@@ -12,7 +12,7 @@
 +(NSSet *)fastFood;
 +(NSSet *)cafe;
 +(NSSet *)bar;
-+(NSSet *)mexican;
++(NSSet *)latin;
 +(NSSet *)pizza;
 +(NSSet *)chinese;
 +(NSSet *)japanese;
