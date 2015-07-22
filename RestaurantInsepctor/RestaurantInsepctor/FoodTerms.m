@@ -26,7 +26,7 @@
 }
 
 +(NSSet *)latin {
-    NSSet *latinSet = [[NSSet alloc] initWithArray:@[@"mexican",@"mexicano",@"taco",@"cantina",@"cuba",@"cuban"]];
+    NSSet *latinSet = [[NSSet alloc] initWithArray:@[@"mexican",@"mexicano",@"taco",@"cantina",@"cuba",@"cuban",@"taqueria"]];
     return latinSet;
 }
 
