@@ -67,54 +67,46 @@
     
     for (NSString *word in nameArray) {
         
-        if ([[FoodTerms fastFood] containsObject:word]) {
-            return [UIImage imageNamed:@"fastfood"];
-        }
-        
-        if ([[FoodTerms cafe] containsObject:word]) {
+        if ([[FoodTerms mexican] containsObject:word]) {
+            return [UIImage imageNamed:@"mexican"];
+        } else if ([[FoodTerms pizza] containsObject:word]) {
+            return [UIImage imageNamed:@"pizza"];
+        } else if ([[FoodTerms chinese] containsObject:word]) {
+            return [UIImage imageNamed:@"chinese"];
+        } else if ([[FoodTerms japanese] containsObject:word]) {
+            return [UIImage imageNamed:@"japanese"];
+        } else if ([[FoodTerms italian] containsObject:word]) {
+            return [UIImage imageNamed:@"italian"];
+        } else if ([[FoodTerms icecream] containsObject:word]) {
+            return [UIImage imageNamed:@"icecream"];
+        } else if ([[FoodTerms juice] containsObject:word]) {
+            return [UIImage imageNamed:@"juice"];
+        } else if ([[FoodTerms steakhouse] containsObject:word]) {
+            return [UIImage imageNamed:@"steakhouse"];
+        } else if ([[FoodTerms fish] containsObject:word]) {
+            return [UIImage imageNamed:@"fish"];
+        } else if ([[FoodTerms wine] containsObject:word]) {
+            return [UIImage imageNamed:@"winebar"];
+        } else if ([[FoodTerms thai] containsObject:word]) {
+            return [UIImage imageNamed:@"thai"];
+        } else if ([[FoodTerms korean] containsObject:word]) {
+            return [UIImage imageNamed:@"korean"];
+        } else if ([[FoodTerms tapas] containsObject:word]) {
+            return [UIImage imageNamed:@"tapas"];
+        } else if ([[FoodTerms mediterranean] containsObject:word]) {
+            return [UIImage imageNamed:@"mediterranean"];
+        } else if ([[FoodTerms indian] containsObject:word]) {
+            return [UIImage imageNamed:@"indian"];
+        } else if ([[FoodTerms cafe] containsObject:word]) {
             return [UIImage imageNamed:@"coffee"];
-        }
-        
-        if ([[FoodTerms bar] containsObject:word]) {
+        } else if ([[FoodTerms fastFood] containsObject:word]) {
+            return [UIImage imageNamed:@"fastfood"];
+        } else if ([[FoodTerms bar] containsObject:word]) {
             return [UIImage imageNamed:@"bar"];
         }
         
-        if ([[FoodTerms mexican] containsObject:word]) {
-            return [UIImage imageNamed:@"mexican"];
-        }
-        
-        if ([[FoodTerms pizza] containsObject:word]) {
-            return [UIImage imageNamed:@"pizza"];
-        }
-        
-        if ([[FoodTerms chinese] containsObject:word]) {
-            return [UIImage imageNamed:@"chinese"];
-        }
-        
-        if ([[FoodTerms japanese] containsObject:word]) {
-            return [UIImage imageNamed:@"japanese"];
-        }
-        
-        if ([[FoodTerms italian] containsObject:word]) {
-            return [UIImage imageNamed:@"italian"];
-        }
-        
-        if ([[FoodTerms icecream] containsObject:word]) {
-            return [UIImage imageNamed:@"icecream"];
-        }
-        
-        if ([[FoodTerms juice] containsObject:word]) {
-            return [UIImage imageNamed:@"juice"];
-        }
-        
-        if ([[FoodTerms steakhouse] containsObject:word]) {
-            return [UIImage imageNamed:@"steakhouse"];
-        }
-        
-        if ([[FoodTerms fish] containsObject:word]) {
-            return [UIImage imageNamed:@"fish"];
-        }
     }
+    
     return [self randomRestaurantIcon];
 }
 
@@ -126,7 +118,7 @@
 
 -(NSArray *)restaurantIcons {
     if (!_restaurantIcons) {
-        _restaurantIcons = @[[UIImage imageNamed:@"restaurant_blue"],[UIImage imageNamed:@"restaurant_green"],[UIImage imageNamed:@"restaurant_red"],[UIImage imageNamed:@"restaurant_teal"],[UIImage imageNamed:@"restaurant_orange"]];
+        _restaurantIcons = @[[UIImage imageNamed:@"restaurant1"],[UIImage imageNamed:@"restaurant2"]];
     }
     return _restaurantIcons;
 }
