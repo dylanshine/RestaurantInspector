@@ -160,8 +160,10 @@
             restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
-                                                restaurantAnnotation.restaurant.nycData = results;
-                                                NSLog(@"%@",restaurantAnnotation.restaurant.nycData);
+                                                if (!restaurantAnnotation.restaurant.inspections.count) {
+                                                    [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
+                                                    NSLog(@"%@",restaurantAnnotation.restaurant);
+                                                }
                                             }];
         }];
     }

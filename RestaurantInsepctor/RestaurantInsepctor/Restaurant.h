@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface Restaurant : NSObject
-@property (nonatomic, strong) NSArray *nycData;
 @property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *mostRecentGrade;
+@property (nonatomic, strong) NSString *averageGrade;
+@property (nonatomic, strong) NSString *cuisineDescription;
+@property (nonatomic, strong) NSMutableArray *inspections;
 
 -(instancetype)initWithPhoneNumber:(NSString *)phoneNumber;
 -(NSString *)formattedPhoneNumber;
+
+-(void)setupRestaurantInspectionDataWithResults:(NSArray *)restaurantInspections;
+
 @end
