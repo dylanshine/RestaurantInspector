@@ -31,7 +31,7 @@
 }
 
 +(NSSet *)pizza {
-    NSSet *pizzaSet = [[NSSet alloc] initWithArray:@[@"pizza",@"pizzaria"]];
+    NSSet *pizzaSet = [[NSSet alloc] initWithArray:@[@"pizza",@"pizzeria"]];
     return pizzaSet;
 }
 

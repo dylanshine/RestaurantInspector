@@ -20,14 +20,45 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-ZR-mzw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
+                                <rect key="frame" x="524" y="20" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5Nc-zj-6d3"/>
+                                    <constraint firstAttribute="height" constant="60" id="GY6-js-vpv"/>
+                                    <constraint firstAttribute="height" constant="80" id="Jht-TQ-3U8"/>
+                                    <constraint firstAttribute="width" constant="80" id="crK-FJ-Aec"/>
+                                </constraints>
+                                <state key="normal" image="crosshair">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Jht-TQ-3U8"/>
+                                        <exclude reference="crK-FJ-Aec"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="17A-7g-oaX"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
+                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-76" id="Awp-5c-AES"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-80" id="SPc-ye-Bx9"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
+                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="lTz-nW-pKJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="17A-7g-oaX"/>
+                                <exclude reference="lTz-nW-pKJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="jbE-ZR-mzw" id="GOr-er-OpD"/>
@@ -37,4 +68,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="crosshair" width="128" height="128"/>
+    </resources>
 </document>
