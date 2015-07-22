@@ -103,9 +103,9 @@
             strongSelf.currentLocation = currentLocation;
             if (!strongSelf.loaded) {
                 [self centerMapOnLocation:self.currentLocation];
-//               [strongSelf setupMap];
+               [strongSelf setupMap];
                 strongSelf.loaded = YES;
-//                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
             }
             
         }
