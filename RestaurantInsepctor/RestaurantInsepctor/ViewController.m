@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphHorizontalSpace;
 @property (weak, nonatomic) NSLayoutConstraint *ralphXCoordinate;
 @property (weak, nonatomic) NSLayoutConstraint *ralphYCoordinate;
+@property (weak, nonatomic) IBOutlet UIImageView *triangle;
 
 @end
 
@@ -44,8 +45,8 @@
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
     
-
 }
+
 
 -(void) setupMap {
     [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];

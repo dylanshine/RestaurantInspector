@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -43,18 +42,29 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
-                                <rect key="frame" x="-400" y="990" width="330" height="210"/>
+                                <rect key="frame" x="-400" y="1000" width="175" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="93B-OQ-h75"/>
+                                    <constraint firstAttribute="width" constant="175" id="FTb-FN-cnP"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="7y5-aw-37b">
+                                <rect key="frame" x="141" y="495" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="9bw-QD-0NQ"/>
+                                    <constraint firstAttribute="width" constant="20" id="iaJ-61-jKX"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.55" id="1K2-nC-1TG"/>
+                            <constraint firstItem="7y5-aw-37b" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" constant="-85" id="2vj-5e-PRK"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
                             <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-92" id="Awp-5c-AES"/>
-                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.35" id="MXJ-CZ-bir"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
+                            <constraint firstItem="7y5-aw-37b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="125" id="Qvl-nR-mts"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-80" id="SPc-ye-Bx9"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
@@ -65,6 +75,7 @@
                         <outlet property="ralph" destination="x4e-cV-8Ol" id="SWu-wS-O1C"/>
                         <outlet property="ralphHorizontalSpace" destination="MYR-v3-QC1" id="bha-cJ-4RL"/>
                         <outlet property="ralphVerticalSpace" destination="SO9-z3-Ies" id="4Ei-5H-9t2"/>
+                        <outlet property="triangle" destination="7y5-aw-37b" id="EKu-dX-QSd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -74,5 +85,6 @@
     <resources>
         <image name="crosshair" width="128" height="128"/>
         <image name="fullralph" width="739" height="805"/>
+        <image name="triangle" width="50" height="50"/>
     </resources>
 </document>
