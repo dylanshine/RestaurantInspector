@@ -43,16 +43,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
-                                <rect key="frame" x="-400" y="960" width="360" height="240"/>
+                                <rect key="frame" x="-400" y="990" width="330" height="210"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.6" id="1K2-nC-1TG"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.55" id="1K2-nC-1TG"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
                             <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-92" id="Awp-5c-AES"/>
-                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.4" id="MXJ-CZ-bir"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.35" id="MXJ-CZ-bir"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
