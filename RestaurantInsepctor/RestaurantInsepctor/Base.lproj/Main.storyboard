@@ -20,27 +20,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-ZR-mzw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
-                                <rect key="frame" x="508" y="20" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="5Nc-zj-6d3"/>
-                                    <constraint firstAttribute="height" constant="60" id="GY6-js-vpv"/>
-                                    <constraint firstAttribute="height" constant="80" id="Jht-TQ-3U8"/>
-                                    <constraint firstAttribute="width" constant="80" id="crK-FJ-Aec"/>
-                                </constraints>
-                                <state key="normal" image="crosshair">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Jht-TQ-3U8"/>
-                                        <exclude reference="crK-FJ-Aec"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
                                 <rect key="frame" x="-400" y="1000" width="175" height="200"/>
                                 <constraints>
@@ -62,21 +41,34 @@
                                     <constraint firstAttribute="width" constant="150" id="eq1-a0-uPN"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
+                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5Nc-zj-6d3"/>
+                                    <constraint firstAttribute="height" constant="50" id="GY6-js-vpv"/>
+                                </constraints>
+                                <state key="normal" image="crosshair">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" constant="-85" id="2vj-5e-PRK"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
-                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-92" id="Awp-5c-AES"/>
                             <constraint firstItem="qJa-c9-PC7" firstAttribute="leading" secondItem="7y5-aw-37b" secondAttribute="trailing" id="G5S-dP-XfH"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="centerY" secondItem="qJa-c9-PC7" secondAttribute="centerY" constant="6" id="QpA-UM-bW6"/>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="125" id="Qvl-nR-mts"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
-                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-80" id="SPc-ye-Bx9"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="Dhb-FV-MCT" secondAttribute="leading" id="Tkk-KB-S8x"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-70" id="sZF-He-9qZ"/>
                         </constraints>
                     </view>
                     <connections>
