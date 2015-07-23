@@ -208,6 +208,8 @@
     
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     
+    [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
+    
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
             restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
@@ -218,7 +220,6 @@
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
                                                 
-                                                [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
                                                 [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
                                                 
                                     
@@ -233,5 +234,17 @@
 - (IBAction)centerMapOnUserLocation:(UIButton *)sender {
     [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
 }
+
+- (IBAction)refreshNearbyRestaurants:(UIButton *)sender {
+    
+    [SVProgressHUD showWithStatus:@"Refreshing Nearby Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+    for (int i =0; i < [self.mapView.annotations count]; i++) {
+        if ([[self.mapView.annotations objectAtIndex:i]isKindOfClass:[RestaurantAnnotation class]]) {
+            [self.mapView removeAnnotation:[self.mapView.annotations objectAtIndex:i]];
+        }
+    }
+    [self setupMap];
+}
+
 
 @end
