@@ -208,6 +208,8 @@
     
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     
+    [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
+    
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
             restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
@@ -218,7 +220,6 @@
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
                                                 
-                                                [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
                                                 [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
                                                 
                                     
