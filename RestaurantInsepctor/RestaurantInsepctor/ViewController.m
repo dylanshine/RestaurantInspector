@@ -211,8 +211,16 @@
                                                     [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
-                                                [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
-                                                [self ralphAnimateOnToScreen];
+                                                
+                                                [UIView animateWithDuration:1.0
+                                                                 animations:^{
+                                                                     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:NO];
+                                                                 }
+                                                                 completion:^(BOOL finished) {
+                                                                      [self ralphAnimateOnToScreen];
+                                                                 }];
+                                    
+                                               
                                             }];
         }];
     }
