@@ -47,7 +47,6 @@
 
 }
 
-
 -(void) setupMap {
     [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
 }
@@ -60,7 +59,7 @@
 
 -(void)ralphAnimateOnToScreen
 {
-    [UIView animateWithDuration:5
+    [UIView animateWithDuration:2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -78,7 +77,7 @@
 
 -(void)ralphAnimateOffScreen
 {
-    [UIView animateWithDuration:5
+    [UIView animateWithDuration:2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -213,6 +212,7 @@
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
                                                 [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
+                                                [self ralphAnimateOnToScreen];
                                             }];
         }];
     }
