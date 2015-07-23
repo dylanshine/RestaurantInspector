@@ -10,11 +10,12 @@
 #import "Inspection.h"
 
 @implementation Restaurant
--(instancetype)initWithPhoneNumber:(NSString *)phoneNumber
+-(instancetype)initWithPhoneNumber:(NSString *)phoneNumber Name:(NSString *)name
 {
     self = [super init];
     if (self) {
         _phoneNumber = phoneNumber;
+        _name = name;
         _inspections = [[NSMutableArray alloc] init];
     }
     
@@ -55,17 +56,16 @@
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    if (!score) {
-        return @"N/A";
-    }
-    else if (score <= 14) {
+    NSLog(@"%ld",(long)score);
+    
+    if (score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {
         return @"B";
     } else if (score > 27 ) {
         return @"C";
     } else {
-       return @"Z";
+       return @"N/A";
     }
     
 }
@@ -82,7 +82,7 @@
         NSString *dateString = [inspection[@"inspection_date"] substringToIndex:9];
         NSDate *date = [dateFormatter dateFromString:dateString];
         
-        if (date > mostRecentDate) {
+        if (date > mostRecentDate && inspection[@"score"]) {
             mostRecentDate = date;
             mostRecentGrade = [self convertScoreToGrade:[inspection[@"score"] integerValue]];
         }
@@ -116,6 +116,14 @@
         return NO;
     }
     return YES;
+}
+
+-(NSString *)textBubbleMessage {
+    if (!self.mostRecentGrade) {
+        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. Please try again later.", self.name];
+    } else {
+        return [NSString stringWithFormat:@"%@'s current grade is a %@. Please tap for more details...ya heard?!",self.name,self.mostRecentGrade];
+    }
 }
 
 @end

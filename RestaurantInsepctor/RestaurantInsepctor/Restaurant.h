@@ -10,14 +10,15 @@
 
 @interface Restaurant : NSObject
 @property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *mostRecentGrade;
 @property (nonatomic, strong) NSString *averageGrade;
 @property (nonatomic, strong) NSString *cuisineDescription;
 @property (nonatomic, strong) NSMutableArray *inspections;
 
--(instancetype)initWithPhoneNumber:(NSString *)phoneNumber;
+-(instancetype)initWithPhoneNumber:(NSString *)phoneNumber Name:(NSString *)name;
 -(NSString *)formattedPhoneNumber;
 
 -(void)setupRestaurantInspectionDataWithResults:(NSArray *)restaurantInspections;
-
+-(NSString *)textBubbleMessage;
 @end

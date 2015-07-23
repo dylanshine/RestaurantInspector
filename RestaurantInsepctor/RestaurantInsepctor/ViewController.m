@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphHorizontalSpace;
 @property (weak, nonatomic) IBOutlet UIImageView *triangle;
 @property (weak, nonatomic) IBOutlet TextBubble *textBubble;
-
+@property (nonatomic, strong) UITapGestureRecognizer *showDetails;
 
 @end
 
@@ -60,6 +60,13 @@
     UITapGestureRecognizer *dismissRalph = [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(ralphAnimateOffScreen)];
     [self.ralph addGestureRecognizer:dismissRalph];
+    
+    self.showDetails = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDetailsForRestaurant:)];
+    [self.textBubble addGestureRecognizer:self.showDetails];
+}
+
+-(void) showDetailsForRestaurant:(Restaurant *)restaurant {
+    
 }
 
 -(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
@@ -83,7 +90,7 @@
                      completion:^(BOOL finished) {
                          self.triangle.hidden = NO;
                          self.textBubble.hidden = NO;
-                         self.textBubble.text = restaurant.cuisineDescription;
+                         self.textBubble.text = [restaurant textBubbleMessage];
                      }];
 
 }
@@ -218,20 +225,25 @@
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
+    self.triangle.hidden = YES;
+    self.textBubble.hidden = YES;
     
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
-            restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
+            restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber Name:restaurantAnnotation.title];
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
-                                                if (!restaurantAnnotation.restaurant.inspections.count) {
-                                                    [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
-                                                    NSLog(@"%@",restaurantAnnotation.restaurant);
+                                                
+                                                if (results) {
+                                                    if (!restaurantAnnotation.restaurant.inspections.count) {
+                                                        [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
+                                                    }
+                                                    self.showDetails.enabled = YES;
+                                                } else {
+                                                    self.showDetails.enabled = NO;
                                                 }
                                                 
                                                 [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
-                                                
-                                    
                                                
                                             }];
         }];
