@@ -32,6 +32,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.dataStore = [AFDataStore sharedData];
     self.dataStore.delegate = self;
@@ -43,16 +44,22 @@
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
     
-    
-    
 
-    
-    NSLog(@"View is done loading");
-    
-    
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+
+-(void) setupMap {
+    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
+}
+
+-(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
+{
+    [self plotRestaurants:restaurants];
+}
+
+
+-(void)ralphAnimateOnToScreen
+{
     [UIView animateWithDuration:5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
@@ -64,30 +71,24 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                  [UIView animateWithDuration:5
-                                   animations:^{
+                         
+                     }];
 
-                                       self.ralphVerticalSpace.constant = 600;
-                                       self.ralphHorizontalSpace.constant = -400;
-                                   
-                                       [self.view layoutIfNeeded];
-                                   }
-                                   completion:^(BOOL finished) {
-                                       NSLog(@"Finished");
-                                   }];
-    }];
-    
-    
 }
 
-
--(void) setupMap {
-    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
-}
-
--(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
+-(void)ralphAnimateOffScreen
 {
-    [self plotRestaurants:restaurants];
+    [UIView animateWithDuration:5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.ralphVerticalSpace.constant = 600;
+                         self.ralphHorizontalSpace.constant = -400;
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 #pragma mark - UNTULocationManager
