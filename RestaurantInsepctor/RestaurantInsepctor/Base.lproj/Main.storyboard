@@ -20,6 +20,19 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-ZR-mzw">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
+                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5Nc-zj-6d3"/>
+                                    <constraint firstAttribute="height" constant="50" id="GY6-js-vpv"/>
+                                </constraints>
+                                <state key="normal" image="crosshair">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
                                 <rect key="frame" x="-400" y="1000" width="175" height="200"/>
                                 <constraints>
@@ -41,17 +54,17 @@
                                     <constraint firstAttribute="width" constant="150" id="eq1-a0-uPN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
-                                <rect key="frame" x="0.0" y="20" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob7-Qa-RMb">
+                                <rect key="frame" x="58" y="25" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="5Nc-zj-6d3"/>
-                                    <constraint firstAttribute="height" constant="50" id="GY6-js-vpv"/>
+                                    <constraint firstAttribute="width" constant="40" id="f0m-tk-Eaf"/>
+                                    <constraint firstAttribute="height" constant="40" id="gmB-kf-AS7"/>
                                 </constraints>
-                                <state key="normal" image="crosshair">
+                                <state key="normal" image="refresh">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
+                                    <action selector="refreshNearbyRestaurants:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B1m-bQ-xu9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,6 +76,8 @@
                             <constraint firstItem="qJa-c9-PC7" firstAttribute="leading" secondItem="7y5-aw-37b" secondAttribute="trailing" id="G5S-dP-XfH"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Ob7-Qa-RMb" secondAttribute="bottom" constant="-65" id="OA6-hk-CPD"/>
+                            <constraint firstItem="Ob7-Qa-RMb" firstAttribute="leading" secondItem="Dhb-FV-MCT" secondAttribute="trailing" constant="8" id="Qah-Gz-9aJ"/>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="centerY" secondItem="qJa-c9-PC7" secondAttribute="centerY" constant="6" id="QpA-UM-bW6"/>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="125" id="Qvl-nR-mts"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
@@ -87,6 +102,7 @@
     <resources>
         <image name="crosshair" width="128" height="128"/>
         <image name="fullralph" width="739" height="805"/>
+        <image name="refresh" width="208" height="208"/>
         <image name="triangle" width="50" height="50"/>
     </resources>
 </document>

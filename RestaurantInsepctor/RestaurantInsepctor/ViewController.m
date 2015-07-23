@@ -109,9 +109,9 @@
             strongSelf.currentLocation = currentLocation;
             if (!strongSelf.loaded) {
                 [self centerMapOnLocation:self.currentLocation];
-//               [strongSelf setupMap];
+               [strongSelf setupMap];
                 strongSelf.loaded = YES;
-//                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
             }
             
         }
@@ -233,5 +233,17 @@
 - (IBAction)centerMapOnUserLocation:(UIButton *)sender {
     [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
 }
+
+- (IBAction)refreshNearbyRestaurants:(UIButton *)sender {
+    
+    [SVProgressHUD showWithStatus:@"Refreshing Nearby Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+    for (int i =0; i < [self.mapView.annotations count]; i++) {
+        if ([[self.mapView.annotations objectAtIndex:i]isKindOfClass:[RestaurantAnnotation class]]) {
+            [self.mapView removeAnnotation:[self.mapView.annotations objectAtIndex:i]];
+        }
+    }
+    [self setupMap];
+}
+
 
 @end
