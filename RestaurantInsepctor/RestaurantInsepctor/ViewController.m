@@ -12,6 +12,7 @@
 #import "AFDataStore.h"
 #import "RestaurantAnnotation.h"
 #import "SVProgressHUD.h"
+#import "TextBubble.h"
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
 
@@ -24,9 +25,9 @@
 @property (nonatomic) BOOL loaded;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphVerticalSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphHorizontalSpace;
-@property (weak, nonatomic) NSLayoutConstraint *ralphXCoordinate;
-@property (weak, nonatomic) NSLayoutConstraint *ralphYCoordinate;
 @property (weak, nonatomic) IBOutlet UIImageView *triangle;
+@property (weak, nonatomic) IBOutlet TextBubble *textBubble;
+
 
 @end
 
@@ -44,6 +45,8 @@
     self.mapView.scrollEnabled = YES;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
+    self.triangle.hidden = YES;
+    self.textBubble.hidden = YES;
     
 }
 
@@ -58,7 +61,7 @@
 }
 
 
--(void)ralphAnimateOnToScreen
+-(void)ralphAnimateOnToScreenWithRestaurant:(Restaurant *)restaurant
 {
     [UIView animateWithDuration:2
                           delay:0
@@ -71,7 +74,9 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         
+                         self.triangle.hidden = NO;
+                         self.textBubble.hidden = NO;
+                         self.textBubble.text = restaurant.cuisineDescription;
                      }];
 
 }
@@ -213,13 +218,9 @@
                                                     NSLog(@"%@",restaurantAnnotation.restaurant);
                                                 }
                                                 
-                                                [UIView animateWithDuration:1.0
-                                                                 animations:^{
-                                                                     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:NO];
-                                                                 }
-                                                                 completion:^(BOOL finished) {
-                                                                      [self ralphAnimateOnToScreen];
-                                                                 }];
+                                                [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
+                                                [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
+                                                
                                     
                                                
                                             }];
