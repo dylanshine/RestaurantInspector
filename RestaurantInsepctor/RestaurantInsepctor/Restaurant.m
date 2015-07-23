@@ -56,17 +56,16 @@
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    if (!score) {
-        return @"N/A";
-    }
-    else if (score <= 14) {
+    NSLog(@"%ld",(long)score);
+    
+    if (score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {
         return @"B";
     } else if (score > 27 ) {
         return @"C";
     } else {
-       return @"Z";
+       return @"N/A";
     }
     
 }
@@ -83,7 +82,7 @@
         NSString *dateString = [inspection[@"inspection_date"] substringToIndex:9];
         NSDate *date = [dateFormatter dateFromString:dateString];
         
-        if (date > mostRecentDate) {
+        if (date > mostRecentDate && inspection[@"score"]) {
             mostRecentDate = date;
             mostRecentGrade = [self convertScoreToGrade:[inspection[@"score"] integerValue]];
         }
@@ -120,10 +119,10 @@
 }
 
 -(NSString *)textBubbleMessage {
-    if ([self.mostRecentGrade isEqualToString:@"N/A"]) {
-        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. For past details click the bubble.", self.name];
+    if (!self.mostRecentGrade) {
+        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. Please try again later.", self.name];
     } else {
-        return [NSString stringWithFormat:@"%@'s current grade is a %@. Press here for more details...ya heard?!",self.name,self.mostRecentGrade];
+        return [NSString stringWithFormat:@"%@'s current grade is a %@. Please tap for more details...ya heard?!",self.name,self.mostRecentGrade];
     }
 }
 
