@@ -47,12 +47,19 @@
     [self startLocationUpdateSubscription];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
+    [self setupGestures];
     
 }
 
 
 -(void) setupMap {
     [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
+}
+
+-(void) setupGestures {
+    UITapGestureRecognizer *dismissRalph = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(ralphAnimateOffScreen)];
+    [self.ralph addGestureRecognizer:dismissRalph];
 }
 
 -(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
@@ -83,6 +90,8 @@
 
 -(void)ralphAnimateOffScreen
 {
+    self.triangle.hidden = YES;
+    self.textBubble.hidden = YES;
     [UIView animateWithDuration:2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
