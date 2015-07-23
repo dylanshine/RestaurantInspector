@@ -83,7 +83,7 @@
                      completion:^(BOOL finished) {
                          self.triangle.hidden = NO;
                          self.textBubble.hidden = NO;
-                         self.textBubble.text = restaurant.cuisineDescription;
+                         self.textBubble.text = [restaurant textBubbleMessage];
                      }];
 
 }
@@ -221,7 +221,7 @@
     
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
-            restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber];
+            restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber Name:restaurantAnnotation.title];
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
                                                 if (!restaurantAnnotation.restaurant.inspections.count) {

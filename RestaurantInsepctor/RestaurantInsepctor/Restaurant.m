@@ -10,11 +10,12 @@
 #import "Inspection.h"
 
 @implementation Restaurant
--(instancetype)initWithPhoneNumber:(NSString *)phoneNumber
+-(instancetype)initWithPhoneNumber:(NSString *)phoneNumber Name:(NSString *)name
 {
     self = [super init];
     if (self) {
         _phoneNumber = phoneNumber;
+        _name = name;
         _inspections = [[NSMutableArray alloc] init];
     }
     
@@ -116,6 +117,14 @@
         return NO;
     }
     return YES;
+}
+
+-(NSString *)textBubbleMessage {
+    if ([self.mostRecentGrade isEqualToString:@"N/A"]) {
+        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. For past details click the bubble.", self.name];
+    } else {
+        return [NSString stringWithFormat:@"%@'s current grade is a %@. Press here for more details...ya heard?!",self.name,self.mostRecentGrade];
+    }
 }
 
 @end
