@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -21,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhb-FV-MCT">
-                                <rect key="frame" x="524" y="20" width="60" height="60"/>
+                                <rect key="frame" x="508" y="20" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="5Nc-zj-6d3"/>
                                     <constraint firstAttribute="height" constant="60" id="GY6-js-vpv"/>
@@ -41,27 +42,29 @@
                                     <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
+                                <rect key="frame" x="-400" y="960" width="360" height="240"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="17A-7g-oaX"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.6" id="1K2-nC-1TG"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
-                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-76" id="Awp-5c-AES"/>
+                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="leading" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-92" id="Awp-5c-AES"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.4" id="MXJ-CZ-bir"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
+                            <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-80" id="SPc-ye-Bx9"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
-                            <constraint firstItem="Dhb-FV-MCT" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="lTz-nW-pKJ"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="17A-7g-oaX"/>
-                                <exclude reference="lTz-nW-pKJ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="jbE-ZR-mzw" id="GOr-er-OpD"/>
+                        <outlet property="ralph" destination="x4e-cV-8Ol" id="SWu-wS-O1C"/>
+                        <outlet property="ralphHorizontalSpace" destination="MYR-v3-QC1" id="bha-cJ-4RL"/>
+                        <outlet property="ralphVerticalSpace" destination="SO9-z3-Ies" id="4Ei-5H-9t2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -70,5 +73,6 @@
     </scenes>
     <resources>
         <image name="crosshair" width="128" height="128"/>
+        <image name="fullralph" width="739" height="805"/>
     </resources>
 </document>

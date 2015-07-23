@@ -14,16 +14,25 @@
 #import "SVProgressHUD.h"
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *ralph;
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
 @property (nonatomic) AFDataStore *dataStore;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) CLLocation *currentLocation;
 @property (nonatomic) BOOL loaded;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphVerticalSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ralphHorizontalSpace;
+@property (weak, nonatomic) NSLayoutConstraint *ralphXCoordinate;
+@property (weak, nonatomic) NSLayoutConstraint *ralphYCoordinate;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.dataStore = [AFDataStore sharedData];
     self.dataStore.delegate = self;
@@ -34,6 +43,8 @@
     self.mapView.scrollEnabled = YES;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
+    
+
 }
 
 
@@ -44,6 +55,40 @@
 -(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
 {
     [self plotRestaurants:restaurants];
+}
+
+
+-(void)ralphAnimateOnToScreen
+{
+    [UIView animateWithDuration:5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         
+                         self.ralphHorizontalSpace.constant = -50;
+                         self.ralphVerticalSpace.constant = 0;
+                         
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+
+}
+
+-(void)ralphAnimateOffScreen
+{
+    [UIView animateWithDuration:5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.ralphVerticalSpace.constant = 600;
+                         self.ralphHorizontalSpace.constant = -400;
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
 }
 
 #pragma mark - UNTULocationManager
