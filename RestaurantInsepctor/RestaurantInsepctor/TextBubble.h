@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TextBubble : UIView
-
+@property (nonatomic, strong) NSString *text;
 @end
