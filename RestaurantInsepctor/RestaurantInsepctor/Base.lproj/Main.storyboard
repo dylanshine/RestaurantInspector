@@ -33,7 +33,7 @@
                                     <action selector="centerMapOnUserLocation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aVM-2G-bHS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullralph" translatesAutoresizingMaskIntoConstraints="NO" id="x4e-cV-8Ol">
                                 <rect key="frame" x="-400" y="1000" width="175" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="93B-OQ-h75"/>
