@@ -93,10 +93,51 @@
                         <outlet property="ralphVerticalSpace" destination="SO9-z3-Ies" id="4Ei-5H-9t2"/>
                         <outlet property="textBubble" destination="qJa-c9-PC7" id="z3T-j2-f8V"/>
                         <outlet property="triangle" destination="7y5-aw-37b" id="EKu-dX-QSd"/>
+                        <segue destination="RDR-74-2Jz" kind="presentation" identifier="detailSegue" id="X4L-hg-sqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Restaurant Detail View Controller-->
+        <scene sceneID="RM1-W0-eGe">
+            <objects>
+                <viewController id="RDR-74-2Jz" customClass="RestaurantDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlH-Mm-gpE"/>
+                        <viewControllerLayoutGuide type="bottom" id="f6E-b0-xa2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U9f-n6-fm4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F86-4C-Nfz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="sdf-im-vG6">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="UNc-Ik-Zx7">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="RDR-74-2Jz" id="iPG-Bj-QNb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="F86-4C-Nfz" secondAttribute="trailing" constant="-16" id="cFz-BR-4Ry"/>
+                            <constraint firstItem="F86-4C-Nfz" firstAttribute="leading" secondItem="U9f-n6-fm4" secondAttribute="leadingMargin" constant="-16" id="inV-ME-rkR"/>
+                            <constraint firstItem="F86-4C-Nfz" firstAttribute="top" secondItem="U9f-n6-fm4" secondAttribute="topMargin" id="j0D-1H-ZLs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="F86-4C-Nfz" id="voR-1S-6eN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWf-og-fez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="250"/>
         </scene>
     </scenes>
     <resources>

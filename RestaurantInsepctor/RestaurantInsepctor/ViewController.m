@@ -13,9 +13,9 @@
 #import "RestaurantAnnotation.h"
 #import "SVProgressHUD.h"
 #import "TextBubble.h"
+#import "RestaurantDetailViewController.h"
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *ralph;
 @property (assign, nonatomic) INTULocationRequestID locationRequestID;
@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *triangle;
 @property (weak, nonatomic) IBOutlet TextBubble *textBubble;
 @property (nonatomic, strong) UITapGestureRecognizer *showDetails;
+@property (nonatomic) Restaurant *selectedRestaurant;
 
 @end
 
@@ -66,7 +67,13 @@
 }
 
 -(void) showDetailsForRestaurant:(Restaurant *)restaurant {
-    
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    [self ralphAnimateOffScreen];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    RestaurantDetailViewController *destination = segue.destinationViewController;
+    destination.restaurant = self.selectedRestaurant;
 }
 
 -(void)dataStore:(AFDataStore *)dataStore didLoadRestaurants:(NSArray *)restaurants
@@ -242,7 +249,7 @@
                                                 } else {
                                                     self.showDetails.enabled = NO;
                                                 }
-                                                
+                                                self.selectedRestaurant = restaurantAnnotation.restaurant;
                                                 [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
                                                
                                             }];
