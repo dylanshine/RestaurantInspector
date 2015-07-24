@@ -25,6 +25,7 @@
     self.tableView.dataSource = self;
     self.tableView.allowsSelection = NO;
     self.tableView.estimatedRowHeight = 150;
+    self.tableView.separatorColor = [UIColor redColor];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
     self.cuisineLabel.text = self.restaurant.cuisineDescription;
@@ -72,6 +73,21 @@
 
 -(BOOL) prefersStatusBarHidden {
     return YES;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 @end

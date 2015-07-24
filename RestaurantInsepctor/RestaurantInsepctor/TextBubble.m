@@ -36,7 +36,7 @@
     [self addSubview:self.imageView];
     
     self.label = [[UILabel alloc] init];
-    self.label.font = [UIFont systemFontOfSize:14.0];
+    self.label.font = [UIFont systemFontOfSize:16.0];
     self.label.text = self.text;
     self.label.numberOfLines = 0;
     self.label.lineBreakMode = NSLineBreakByWordWrapping;
