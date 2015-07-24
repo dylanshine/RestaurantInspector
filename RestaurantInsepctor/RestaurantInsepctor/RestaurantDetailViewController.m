@@ -25,7 +25,7 @@
     self.tableView.dataSource = self;
     self.tableView.allowsSelection = NO;
     self.tableView.estimatedRowHeight = 150;
-    self.tableView.separatorColor = [UIColor redColor];
+    self.tableView.separatorColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
     self.cuisineLabel.text = self.restaurant.cuisineDescription;
