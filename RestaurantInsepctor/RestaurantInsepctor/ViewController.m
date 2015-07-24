@@ -300,6 +300,15 @@
     [self setupMap];
 }
 
+- (IBAction)escapeButtonPressed:(UIButton *)sender {
+    [SVProgressHUD dismiss];
+    [self ralphAnimateOffScreen];
+    for (id<MKAnnotation> annotation in self.mapView.selectedAnnotations) {
+        [self.mapView deselectAnnotation:annotation animated:YES];
+    }
+}
+
+
 -(void)playSoundNamed:(NSString *)name Type:(NSString *)type {
     NSString *soundPath = [[NSBundle mainBundle] pathForResource:name ofType:type];
     SystemSoundID soundID;

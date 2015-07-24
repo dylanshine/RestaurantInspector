@@ -67,12 +67,26 @@
                                     <action selector="refreshNearbyRestaurants:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B1m-bQ-xu9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szg-Am-DG6">
+                                <rect key="frame" x="113" y="25" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fza-Yw-km4"/>
+                                    <constraint firstAttribute="width" constant="40" id="nbZ-W4-tSq"/>
+                                </constraints>
+                                <state key="normal" image="escape">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="escapeButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ALZ-RL-DTV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7y5-aw-37b" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" constant="-85" id="2vj-5e-PRK"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="8su-ew-nmF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jbE-ZR-mzw" secondAttribute="bottom" id="AG6-5z-Qxm"/>
+                            <constraint firstItem="szg-Am-DG6" firstAttribute="leading" secondItem="Ob7-Qa-RMb" secondAttribute="trailing" constant="15" id="DEr-zY-cQB"/>
                             <constraint firstItem="qJa-c9-PC7" firstAttribute="leading" secondItem="7y5-aw-37b" secondAttribute="trailing" id="G5S-dP-XfH"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-416" id="MYR-v3-QC1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jbE-ZR-mzw" secondAttribute="trailing" constant="-16" id="NRV-Zm-3Wf"/>
@@ -82,6 +96,7 @@
                             <constraint firstItem="7y5-aw-37b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="125" id="Qvl-nR-mts"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="Dhb-FV-MCT" secondAttribute="leading" id="Tkk-KB-S8x"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="szg-Am-DG6" secondAttribute="bottom" constant="-65" id="geq-v0-gri"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-70" id="sZF-He-9qZ"/>
                         </constraints>
@@ -261,6 +276,7 @@
         <image name="A" width="333" height="329"/>
         <image name="criticalFlag" width="128" height="128"/>
         <image name="crosshair" width="128" height="128"/>
+        <image name="escape" width="128" height="128"/>
         <image name="fullralph" width="739" height="805"/>
         <image name="refresh" width="208" height="208"/>
         <image name="triangle" width="50" height="50"/>
