@@ -11,11 +11,9 @@
 
 @interface RestaurantDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *currentGradeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *averageGradeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cuisineLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *gradeImageView;
 
 @end
 
@@ -29,8 +27,8 @@
     self.tableView.estimatedRowHeight = 150;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
-    self.currentGradeLabel.text = self.restaurant.mostRecentGrade;
     self.cuisineLabel.text = self.restaurant.cuisineDescription;
+    self.gradeImageView.image = [UIImage imageNamed:self.restaurant.mostRecentGrade];
 }
 
 - (void)didReceiveMemoryWarning {

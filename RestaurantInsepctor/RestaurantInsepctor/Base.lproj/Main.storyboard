@@ -129,14 +129,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Grade:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiJ-1D-S1j">
-                                <rect key="frame" x="227" y="65" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GPg-gA-m2B">
-                                <rect key="frame" x="0.0" y="151" width="600" height="449"/>
+                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="violationCell" rowHeight="60" id="fuH-bm-tEf">
@@ -155,7 +149,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-bh-lan">
-                                                    <rect key="frame" x="57" y="8" width="88" height="21"/>
+                                                    <rect key="frame" x="57" y="8" width="88" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -190,26 +184,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3A-RS-nO1">
-                                <rect key="frame" x="348" y="65" width="12" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuisine:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GO-J5-oBs">
-                                <rect key="frame" x="227" y="94" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Italian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-ZU-fdc">
-                                <rect key="frame" x="297" y="95" width="46" height="21"/>
+                                <rect key="frame" x="234" y="185" width="62" height="29.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Inspections" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-Nu-QXs">
-                                <rect key="frame" x="226" y="122" width="148" height="21"/>
+                                <rect key="frame" x="226.5" y="211.5" width="147.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A" translatesAutoresizingMaskIntoConstraints="NO" id="yFi-Jp-eAu">
+                                <rect key="frame" x="234" y="52" width="133" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="6mr-rq-EOZ"/>
+                                    <constraint firstAttribute="width" constant="133" id="VYh-Lz-NLf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Italian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-ZU-fdc">
+                                <rect key="frame" x="304" y="189" width="45.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -217,29 +212,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qto-ZU-fdc" firstAttribute="top" secondItem="yiJ-1D-S1j" secondAttribute="bottom" constant="9" id="0E5-FV-Tf8"/>
                             <constraint firstItem="Qto-ZU-fdc" firstAttribute="leading" secondItem="5GO-J5-oBs" secondAttribute="trailing" constant="8" id="2IK-wm-8oE"/>
+                            <constraint firstAttribute="centerX" secondItem="yFi-Jp-eAu" secondAttribute="centerX" id="DHk-mE-kBF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GPg-gA-m2B" secondAttribute="trailing" constant="-16" id="IgN-Ik-NB8"/>
-                            <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="Qto-ZU-fdc" secondAttribute="bottom" constant="7" id="Ncm-lq-ORL"/>
-                            <constraint firstAttribute="centerX" secondItem="5GO-J5-oBs" secondAttribute="centerX" constant="42" id="O1o-Sd-VJX"/>
-                            <constraint firstItem="yiJ-1D-S1j" firstAttribute="top" secondItem="F86-4C-Nfz" secondAttribute="bottom" constant="21" id="Opo-Wz-IR4"/>
+                            <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="Qto-ZU-fdc" secondAttribute="bottom" constant="2" id="Ncm-lq-ORL"/>
+                            <constraint firstAttribute="centerX" secondItem="5GO-J5-oBs" secondAttribute="centerX" constant="35" id="O1o-Sd-VJX"/>
+                            <constraint firstItem="Qto-ZU-fdc" firstAttribute="top" secondItem="yFi-Jp-eAu" secondAttribute="bottom" constant="5" id="P0B-Ed-m5w"/>
                             <constraint firstItem="f6E-b0-xa2" firstAttribute="top" secondItem="GPg-gA-m2B" secondAttribute="bottom" id="PRS-PD-wta"/>
-                            <constraint firstItem="5GO-J5-oBs" firstAttribute="top" secondItem="yiJ-1D-S1j" secondAttribute="bottom" constant="8" id="S6E-HY-JtG"/>
-                            <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="5GO-J5-oBs" secondAttribute="bottom" constant="8" id="Vdu-BE-8tb"/>
+                            <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="5GO-J5-oBs" secondAttribute="bottom" constant="-3" id="Vdu-BE-8tb"/>
                             <constraint firstItem="GPg-gA-m2B" firstAttribute="top" secondItem="Pc8-Nu-QXs" secondAttribute="bottom" constant="8" id="Vv6-KZ-13F"/>
-                            <constraint firstAttribute="centerX" secondItem="yiJ-1D-S1j" secondAttribute="centerX" constant="16" id="We3-VE-bD9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F86-4C-Nfz" secondAttribute="trailing" constant="-16" id="cFz-BR-4Ry"/>
-                            <constraint firstItem="b3A-RS-nO1" firstAttribute="leading" secondItem="yiJ-1D-S1j" secondAttribute="trailing" constant="7" id="hR1-l8-mv4"/>
                             <constraint firstItem="F86-4C-Nfz" firstAttribute="leading" secondItem="U9f-n6-fm4" secondAttribute="leadingMargin" constant="-16" id="inV-ME-rkR"/>
                             <constraint firstItem="F86-4C-Nfz" firstAttribute="top" secondItem="U9f-n6-fm4" secondAttribute="topMargin" id="j0D-1H-ZLs"/>
                             <constraint firstAttribute="centerX" secondItem="Pc8-Nu-QXs" secondAttribute="centerX" id="nk1-bo-FW4"/>
-                            <constraint firstItem="b3A-RS-nO1" firstAttribute="top" secondItem="yiJ-1D-S1j" secondAttribute="top" id="zS2-a9-4Uh"/>
+                            <constraint firstItem="5GO-J5-oBs" firstAttribute="top" secondItem="yFi-Jp-eAu" secondAttribute="bottom" constant="1" id="tG0-gM-oEu"/>
+                            <constraint firstItem="yFi-Jp-eAu" firstAttribute="top" secondItem="F86-4C-Nfz" secondAttribute="bottom" constant="8" id="xGf-lV-XZt"/>
                             <constraint firstItem="GPg-gA-m2B" firstAttribute="leading" secondItem="U9f-n6-fm4" secondAttribute="leadingMargin" constant="-16" id="zxx-GZ-wcf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cuisineLabel" destination="Qto-ZU-fdc" id="MYw-Gq-0Q8"/>
-                        <outlet property="currentGradeLabel" destination="b3A-RS-nO1" id="LfH-sA-3RR"/>
+                        <outlet property="gradeImageView" destination="yFi-Jp-eAu" id="dBW-Bo-Zva"/>
                         <outlet property="navBar" destination="F86-4C-Nfz" id="voR-1S-6eN"/>
                         <outlet property="tableView" destination="GPg-gA-m2B" id="nUq-wn-xic"/>
                     </connections>
@@ -250,6 +243,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="A" width="333" height="329"/>
         <image name="criticalFlag" width="128" height="128"/>
         <image name="crosshair" width="128" height="128"/>
         <image name="fullralph" width="739" height="805"/>
