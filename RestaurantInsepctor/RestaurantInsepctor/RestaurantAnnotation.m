@@ -59,7 +59,7 @@
 
 -(UIImage *)setPinImage {
     
-    UIImage *restaurantImage = [UIImage imageNamed:@"restaurantImage"];
+    UIImage *restaurantImage = [UIImage imageNamed:@"restaurantImageNoBorder"];
     
     return restaurantImage;
 }
