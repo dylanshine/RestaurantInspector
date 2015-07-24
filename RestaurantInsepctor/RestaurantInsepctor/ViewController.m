@@ -56,7 +56,7 @@
 
 
 -(void) setupMap {
-    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
+    [self.dataStore getRestaurantsWith:500 CurrentLocation:self.currentLocation];
 }
 
 -(void) setupGestures {
@@ -170,7 +170,7 @@
 
 -(void) centerMapOnLocation:(CLLocation *)location {
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 700, 700);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 600, 600);
     
     [self.mapView setRegion:region];
     
