@@ -38,7 +38,7 @@
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    if (score <= 14) {
+    if (score >=1 && score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {
         return @"B";
