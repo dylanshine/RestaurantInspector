@@ -14,6 +14,7 @@
 #import "SVProgressHUD.h"
 #import "TextBubble.h"
 #import "RestaurantDetailViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
@@ -274,6 +275,7 @@
 
 -(void)showSelectedRestaurantMessage {
     [SVProgressHUD dismiss];
+    [self playSoundNamed:@"message" Type:@"mp3"];
     self.triangle.hidden = NO;
     self.textBubble.hidden = NO;
     self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
@@ -292,5 +294,11 @@
     [self setupMap];
 }
 
+-(void)playSoundNamed:(NSString *)name Type:(NSString *)type {
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:name ofType:type];
+    SystemSoundID soundID;
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+    AudioServicesPlaySystemSound(soundID);
+}
 
 @end
