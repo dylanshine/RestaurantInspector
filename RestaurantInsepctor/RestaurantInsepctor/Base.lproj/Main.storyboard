@@ -160,12 +160,19 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTm-50-D0s">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTm-50-D0s">
                                                     <rect key="frame" x="8" y="28" width="585" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="criticalFlag" translatesAutoresizingMaskIntoConstraints="NO" id="dsQ-FR-B2O">
+                                                    <rect key="frame" x="567" y="6" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="JX1-EE-NhP"/>
+                                                        <constraint firstAttribute="width" constant="25" id="RNp-Kt-5Zw"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GTh-bh-lan" firstAttribute="leading" secondItem="n5m-kb-mQa" secondAttribute="trailing" constant="8" id="4sC-eT-OcG"/>
@@ -173,9 +180,11 @@
                                                 <constraint firstItem="n5m-kb-mQa" firstAttribute="leading" secondItem="WBl-Ep-Ywg" secondAttribute="leadingMargin" id="Ask-Vd-3Du"/>
                                                 <constraint firstItem="n5m-kb-mQa" firstAttribute="top" secondItem="WBl-Ep-Ywg" secondAttribute="topMargin" id="JXM-fE-5QB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tTm-50-D0s" secondAttribute="trailing" constant="-1" id="Q3x-MN-49f"/>
+                                                <constraint firstItem="dsQ-FR-B2O" firstAttribute="top" secondItem="WBl-Ep-Ywg" secondAttribute="topMargin" constant="-2" id="QtU-vQ-AYI"/>
                                                 <constraint firstItem="tTm-50-D0s" firstAttribute="leading" secondItem="WBl-Ep-Ywg" secondAttribute="leadingMargin" id="YoP-dt-7Rt"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tTm-50-D0s" secondAttribute="bottom" constant="3" id="nMI-Qe-zha"/>
                                                 <constraint firstItem="GTh-bh-lan" firstAttribute="top" secondItem="WBl-Ep-Ywg" secondAttribute="topMargin" id="opK-0n-taU"/>
+                                                <constraint firstItem="dsQ-FR-B2O" firstAttribute="trailing" secondItem="WBl-Ep-Ywg" secondAttribute="trailingMargin" id="uKE-By-Lsv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -241,6 +250,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="criticalFlag" width="128" height="128"/>
         <image name="crosshair" width="128" height="128"/>
         <image name="fullralph" width="739" height="805"/>
         <image name="refresh" width="208" height="208"/>

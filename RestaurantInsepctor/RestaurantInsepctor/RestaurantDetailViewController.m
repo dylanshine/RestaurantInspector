@@ -51,16 +51,16 @@
     
     
     UILabel *dateLabel = (UILabel *)[cell.contentView viewWithTag:1];
-    UILabel *scoreLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    UILabel *description = (UILabel *)[cell.contentView viewWithTag:3];
+    UILabel *description = (UILabel *)[cell.contentView viewWithTag:2];
+    UIImageView *flag = (UIImageView *)[cell.contentView viewWithTag:3];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     NSString *inspectionDateString = [dateFormatter stringFromDate:inspection.inspectionDate];
     
     dateLabel.text = inspectionDateString;
-    scoreLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)inspection.score];
     description.text = inspection.violationDescription;
+    flag.hidden = !inspection.criticalFlag;
     
     return cell;
 }
