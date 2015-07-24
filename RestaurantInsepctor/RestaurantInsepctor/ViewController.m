@@ -232,12 +232,14 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
-    [self ralphAnimateOnToScreen];
+    
+    if (!self.ralphInPlace) {
+       [self ralphAnimateOnToScreen];
+    }
     
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
