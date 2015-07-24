@@ -86,7 +86,7 @@
 
 -(void)ralphAnimateOnToScreen
 {
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:1.5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -98,7 +98,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.ralphInPlace = YES;
-                         if ([self.selectedRestaurant textBubbleMessage]) {
+                         if (self.selectedRestaurant) {
                              [self showSelectedRestaurantMessage];
                          }
                      }];
