@@ -28,7 +28,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
     self.cuisineLabel.text = self.restaurant.cuisineDescription;
-    self.gradeImageView.image = [UIImage imageNamed:self.restaurant.mostRecentGrade];
+    self.gradeImageView.image = [self setGradeImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +61,13 @@
     flag.hidden = !inspection.criticalFlag;
     
     return cell;
+}
+
+-(UIImage *)setGradeImage {
+    if ([self.restaurant.mostRecentGrade isEqualToString:@"N/A"]) {
+        return [UIImage imageNamed:@"pending"];
+    }
+    return [UIImage imageNamed:self.restaurant.mostRecentGrade];
 }
 
 -(BOOL) prefersStatusBarHidden {
