@@ -56,8 +56,6 @@
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    NSLog(@"%ld",(long)score);
-    
     if (score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {

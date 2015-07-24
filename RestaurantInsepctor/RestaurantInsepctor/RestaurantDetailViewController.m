@@ -28,6 +28,9 @@
     self.tableView.estimatedRowHeight = 150;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
+    self.currentGradeLabel.text = self.restaurant.mostRecentGrade;
+    self.averageGradeLabel.text = self.restaurant.averageGrade;
+    self.cuisineLabel.text = self.restaurant.cuisineDescription;
 }
 
 - (void)didReceiveMemoryWarning {

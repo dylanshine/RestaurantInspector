@@ -84,7 +84,7 @@
 
 -(void)ralphAnimateOnToScreen
 {
-    [UIView animateWithDuration:2
+    [UIView animateWithDuration:1
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -248,16 +248,21 @@
                                                 } else {
                                                     self.showDetails.enabled = NO;
                                                 }
-                                                self.selectedRestaurant = restaurantAnnotation.restaurant;
-                                                self.triangle.hidden = NO;
-                                                self.textBubble.hidden = NO;
-                                                self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
+                                                [self showSelectedRestaurantMessage:restaurantAnnotation];
                                             }];
         }];
+    } else {
+        [self showSelectedRestaurantMessage:restaurantAnnotation];
     }
-    
 }
 
+
+-(void)showSelectedRestaurantMessage:(RestaurantAnnotation *)restaurantAnnotation {
+    self.selectedRestaurant = restaurantAnnotation.restaurant;
+    self.triangle.hidden = NO;
+    self.textBubble.hidden = NO;
+    self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
+}
 
 - (IBAction)centerMapOnUserLocation:(UIButton *)sender {
     [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
