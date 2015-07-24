@@ -241,7 +241,7 @@
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
                                                 
-                                                if (results) {
+                                                if (results.count > 0) {
                                                     if (!restaurantAnnotation.restaurant.inspections.count) {
                                                         [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
                                                     }
