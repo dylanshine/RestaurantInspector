@@ -17,4 +17,5 @@
 @property (nonatomic) Restaurant *restaurant;
 -(instancetype)initWithName:(NSString *)name Coordinate:(CLLocationCoordinate2D)coordinate Address:(NSString *)address Place:(NSString *)place;
 -(UIImage *)setPinImage;
+
 @end

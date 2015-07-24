@@ -3,3 +3,5 @@ pod "AFNetworking", "~> 2.0"
 pod 'Asterism', '1.0.0-RC3'
 pod 'SVProgressHUD'
 pod 'Masonry'
+pod 'FontAwesomeKit', '~> 2.1.0'
+

@@ -15,6 +15,7 @@
 #import "TextBubble.h"
 #import "RestaurantDetailViewController.h"
 
+
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *ralph;
@@ -42,7 +43,7 @@
     self.mapView.delegate = self;
     self.locationRequestID = NSNotFound;
     [self.mapView setShowsUserLocation:YES];
-    self.mapView.zoomEnabled = NO;
+    self.mapView.zoomEnabled = YES;
     self.mapView.scrollEnabled = YES;
     [self.mapView setShowsPointsOfInterest:NO];
     [self startLocationUpdateSubscription];
