@@ -56,7 +56,7 @@
 
 
 -(void) setupMap {
-    [self.dataStore getRestaurantsWith:600 CurrentLocation:self.currentLocation];
+    [self.dataStore getRestaurantsWith:500 CurrentLocation:self.currentLocation];
 }
 
 -(void) setupGestures {
@@ -86,7 +86,7 @@
 
 -(void)ralphAnimateOnToScreen
 {
-    [UIView animateWithDuration:1
+    [UIView animateWithDuration:1.5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -98,7 +98,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.ralphInPlace = YES;
-                         if ([self.selectedRestaurant textBubbleMessage]) {
+                         if (self.selectedRestaurant) {
                              [self showSelectedRestaurantMessage];
                          }
                      }];
@@ -170,7 +170,7 @@
 
 -(void) centerMapOnLocation:(CLLocation *)location {
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 700, 700);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location.coordinate, 600, 600);
     
     [self.mapView setRegion:region];
     
