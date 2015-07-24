@@ -98,7 +98,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.ralphInPlace = YES;
-                         if (self.selectedRestaurant) {
+                         if (self.selectedRestaurant.inspections.count) {
                              [self showSelectedRestaurantMessage];
                          }
                      }];
