@@ -209,7 +209,7 @@
         UIImage *ralphButtonImage = [UIImage imageNamed:@"ralph1"];
         
         UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        detailButton.frame = CGRectMake(141,5,30,30);
+        detailButton.frame = CGRectMake(141,5,40,40);
         [detailButton setImage:ralphButtonImage forState:UIControlStateNormal];
         detailButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];
