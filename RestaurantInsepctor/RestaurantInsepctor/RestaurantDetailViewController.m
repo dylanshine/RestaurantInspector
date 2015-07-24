@@ -64,7 +64,7 @@
 }
 
 -(UIImage *)setGradeImage {
-    if ([self.restaurant.mostRecentGrade isEqualToString:@"N/A"]) {
+    if (!self.restaurant.mostRecentGrade) {
         return [UIImage imageNamed:@"pending"];
     }
     return [UIImage imageNamed:self.restaurant.mostRecentGrade];
