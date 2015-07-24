@@ -23,7 +23,6 @@
 }
 
 -(void)setupRestaurantInspectionDataWithResults:(NSArray *)restaurantInspections {
-    [self createAverage:restaurantInspections];
     [self findMostRecentGrade:restaurantInspections];
     [self getRestaurantCuisineDescription:restaurantInspections];
     [self createInspections:restaurantInspections];
@@ -37,26 +36,9 @@
     return formattedPhoneNumber;
 }
 
--(void)createAverage:(NSArray *)restaurantInspections {
-    NSMutableArray *scores = [NSMutableArray array];
-    
-    for (NSDictionary *inspection in restaurantInspections) {
-        if (inspection[@"score"]) {
-            [scores addObject:inspection[@"score"]];
-        }
-    }
-    NSInteger totalOfScores = 0;
-    
-    for (NSNumber *score in scores) {
-        totalOfScores += score.integerValue;
-    }
-
-   self.averageGrade = [NSString stringWithFormat:@"%lu",totalOfScores / scores.count];
-}
-
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    if (score <= 14) {
+    if (score >=1 && score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {
         return @"B";
@@ -124,7 +106,7 @@
     if (!self.mostRecentGrade) {
         return [NSString stringWithFormat:@"I couldn't find the current grade for %@.\nPlease try again later.", self.name];
     } else {
-        return [NSString stringWithFormat:@"%@'s current grade is a %@.\nPlease tap for more details...ya heard?!",self.name,self.mostRecentGrade];
+        return [NSString stringWithFormat:@"Ralph here, %@ currently holds a Grade %@ sanitary inspection with %lu critical violations.\nPlease tap the bubble for more details.",self.name,self.mostRecentGrade,(unsigned long)[self criticalViolations]];
     }
 }
 
@@ -132,6 +114,16 @@
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"inspectionDate" ascending:NO];
     NSArray *descriptors = [NSArray arrayWithObject:descriptor];
     self.inspections = [[self.inspections sortedArrayUsingDescriptors:descriptors] mutableCopy];
+}
+
+-(NSUInteger)criticalViolations {
+    NSUInteger criticalViolationsCount = 0;
+    for (Inspection *inspection in self.inspections) {
+        if (inspection.criticalFlag) {
+            criticalViolationsCount++;
+        }
+    }
+    return criticalViolationsCount;
 }
 
 @end

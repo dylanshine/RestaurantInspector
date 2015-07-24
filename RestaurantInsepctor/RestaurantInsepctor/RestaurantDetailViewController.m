@@ -11,11 +11,9 @@
 
 @interface RestaurantDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *currentGradeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *averageGradeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cuisineLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *gradeImageView;
 
 @end
 
@@ -29,9 +27,8 @@
     self.tableView.estimatedRowHeight = 150;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
-    self.currentGradeLabel.text = self.restaurant.mostRecentGrade;
-    self.averageGradeLabel.text = self.restaurant.averageGrade;
     self.cuisineLabel.text = self.restaurant.cuisineDescription;
+    self.gradeImageView.image = [self setGradeImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,18 +49,25 @@
     
     
     UILabel *dateLabel = (UILabel *)[cell.contentView viewWithTag:1];
-    UILabel *scoreLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    UILabel *description = (UILabel *)[cell.contentView viewWithTag:3];
+    UILabel *description = (UILabel *)[cell.contentView viewWithTag:2];
+    UIImageView *flag = (UIImageView *)[cell.contentView viewWithTag:3];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     NSString *inspectionDateString = [dateFormatter stringFromDate:inspection.inspectionDate];
     
     dateLabel.text = inspectionDateString;
-    scoreLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)inspection.score];
     description.text = inspection.violationDescription;
+    flag.hidden = !inspection.criticalFlag;
     
     return cell;
+}
+
+-(UIImage *)setGradeImage {
+    if ([self.restaurant.mostRecentGrade isEqualToString:@"N/A"]) {
+        return [UIImage imageNamed:@"pending"];
+    }
+    return [UIImage imageNamed:self.restaurant.mostRecentGrade];
 }
 
 -(BOOL) prefersStatusBarHidden {

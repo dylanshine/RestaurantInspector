@@ -21,7 +21,6 @@
 		FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8078781B5D696600A88301 /* MapKit.framework */; };
 		FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FC80787B1B5D7B7000A88301 /* AFDataStore.m */; };
 		FC8ECD741B619C1B009E1402 /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8ECD731B619C1B009E1402 /* RestaurantDetailViewController.m */; };
-		FCE7C5401B5EBC220047883A /* FoodTerms.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C53F1B5EBC220047883A /* FoodTerms.m */; };
 		FCE7C5431B5F15CF0047883A /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C5421B5F15CF0047883A /* Inspection.m */; };
 		FCEA35321B615AC00056CC1C /* TextBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA35311B615AC00056CC1C /* TextBubble.m */; };
 /* End PBXBuildFile section */
@@ -64,8 +63,6 @@
 		FC80787D1B5D7CDC00A88301 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FC8ECD721B619C1B009E1402 /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
 		FC8ECD731B619C1B009E1402 /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
-		FCE7C53E1B5EBC220047883A /* FoodTerms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTerms.h; sourceTree = "<group>"; };
-		FCE7C53F1B5EBC220047883A /* FoodTerms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodTerms.m; sourceTree = "<group>"; };
 		FCE7C5411B5F15CF0047883A /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
 		FCE7C5421B5F15CF0047883A /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		FCEA35301B615AC00056CC1C /* TextBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBubble.h; sourceTree = "<group>"; };
@@ -149,8 +146,6 @@
 				FC1AADB21B5D34B6007587D3 /* Images.xcassets */,
 				FC1AADB41B5D34B6007587D3 /* LaunchScreen.xib */,
 				FC1AADA51B5D34B6007587D3 /* Supporting Files */,
-				FCE7C53E1B5EBC220047883A /* FoodTerms.h */,
-				FCE7C53F1B5EBC220047883A /* FoodTerms.m */,
 				FCEA35301B615AC00056CC1C /* TextBubble.h */,
 				FCEA35311B615AC00056CC1C /* TextBubble.m */,
 				FC8ECD721B619C1B009E1402 /* RestaurantDetailViewController.h */,
@@ -324,7 +319,6 @@
 			files = (
 				FC1AADAE1B5D34B6007587D3 /* ViewController.m in Sources */,
 				FCE7C5431B5F15CF0047883A /* Inspection.m in Sources */,
-				FCE7C5401B5EBC220047883A /* FoodTerms.m in Sources */,
 				DB0139ED1B5E8BFB0029B30B /* Restaurant.m in Sources */,
 				FC1AADAB1B5D34B6007587D3 /* AppDelegate.m in Sources */,
 				DBE78D971B5DA042006B2F2D /* RestaurantAnnotation.m in Sources */,

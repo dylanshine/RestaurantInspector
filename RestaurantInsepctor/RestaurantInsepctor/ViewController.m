@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet TextBubble *textBubble;
 @property (nonatomic, strong) UITapGestureRecognizer *showDetails;
 @property (nonatomic) Restaurant *selectedRestaurant;
+@property (nonatomic) BOOL ralphInPlace;
 
 @end
 
@@ -96,7 +97,10 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         
+                         self.ralphInPlace = YES;
+                         if ([self.selectedRestaurant textBubbleMessage]) {
+                             [self showSelectedRestaurantMessage];
+                         }
                      }];
 
 }
@@ -114,7 +118,7 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         
+                         self.ralphInPlace = NO;
                      }];
 }
 
@@ -229,7 +233,6 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
-    
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
@@ -238,6 +241,7 @@
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
             restaurantAnnotation.restaurant = [[Restaurant alloc] initWithPhoneNumber:phoneNumber Name:restaurantAnnotation.title];
+            self.selectedRestaurant = restaurantAnnotation.restaurant;
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
                                                 
@@ -249,17 +253,21 @@
                                                 } else {
                                                     self.showDetails.enabled = NO;
                                                 }
-                                                [self showSelectedRestaurantMessage:restaurantAnnotation];
+                                                if (self.ralphInPlace) {
+                                                    [self showSelectedRestaurantMessage];
+                                                }
+                                                
                                             }];
         }];
     } else {
-        [self showSelectedRestaurantMessage:restaurantAnnotation];
+        if (self.ralphInPlace) {
+            [self showSelectedRestaurantMessage];
+        }
     }
 }
 
 
--(void)showSelectedRestaurantMessage:(RestaurantAnnotation *)restaurantAnnotation {
-    self.selectedRestaurant = restaurantAnnotation.restaurant;
+-(void)showSelectedRestaurantMessage {
     self.triangle.hidden = NO;
     self.textBubble.hidden = NO;
     self.textBubble.text = [self.selectedRestaurant textBubbleMessage];

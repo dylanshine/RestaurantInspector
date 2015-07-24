@@ -10,7 +10,6 @@
 #import "RestaurantAnnotation.h"
 #import <MapKit/MapKit.h>
 #import <AddressBook/AddressBook.h>
-#import "FoodTerms.h"
 @interface RestaurantAnnotation()
 @property (nonatomic, strong) NSArray *restaurantIcons;
 @end

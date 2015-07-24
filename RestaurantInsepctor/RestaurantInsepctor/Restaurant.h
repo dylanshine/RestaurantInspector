@@ -12,7 +12,6 @@
 @property (nonatomic, strong) NSString *phoneNumber;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *mostRecentGrade;
-@property (nonatomic, strong) NSString *averageGrade;
 @property (nonatomic, strong) NSString *cuisineDescription;
 @property (nonatomic, strong) NSMutableArray *inspections;
 
