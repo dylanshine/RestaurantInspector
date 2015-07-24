@@ -21,6 +21,7 @@
 		FC8078791B5D696600A88301 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8078781B5D696600A88301 /* MapKit.framework */; };
 		FC80787C1B5D7B7000A88301 /* AFDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FC80787B1B5D7B7000A88301 /* AFDataStore.m */; };
 		FC8ECD741B619C1B009E1402 /* RestaurantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC8ECD731B619C1B009E1402 /* RestaurantDetailViewController.m */; };
+		FCDA2EB81B62D97E00BEAF51 /* message.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCDA2EB71B62D97E00BEAF51 /* message.mp3 */; };
 		FCE7C5431B5F15CF0047883A /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7C5421B5F15CF0047883A /* Inspection.m */; };
 		FCEA35321B615AC00056CC1C /* TextBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEA35311B615AC00056CC1C /* TextBubble.m */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		FC80787D1B5D7CDC00A88301 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FC8ECD721B619C1B009E1402 /* RestaurantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantDetailViewController.h; sourceTree = "<group>"; };
 		FC8ECD731B619C1B009E1402 /* RestaurantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantDetailViewController.m; sourceTree = "<group>"; };
+		FCDA2EB71B62D97E00BEAF51 /* message.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = message.mp3; sourceTree = "<group>"; };
 		FCE7C5411B5F15CF0047883A /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
 		FCE7C5421B5F15CF0047883A /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
 		FCEA35301B615AC00056CC1C /* TextBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextBubble.h; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		FC1AADA41B5D34B6007587D3 /* RestaurantInsepctor */ = {
 			isa = PBXGroup;
 			children = (
+				FCDA2EB61B62D97400BEAF51 /* Sounds */,
 				FC80787A1B5D7B7000A88301 /* AFDataStore.h */,
 				FC80787B1B5D7B7000A88301 /* AFDataStore.m */,
 				FC1AADA91B5D34B6007587D3 /* AppDelegate.h */,
@@ -180,6 +183,14 @@
 				FC1AADC01B5D34B6007587D3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCDA2EB61B62D97400BEAF51 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FCDA2EB71B62D97E00BEAF51 /* message.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 			files = (
 				FC1AADB11B5D34B6007587D3 /* Main.storyboard in Resources */,
 				FC1AADB61B5D34B6007587D3 /* LaunchScreen.xib in Resources */,
+				FCDA2EB81B62D97E00BEAF51 /* message.mp3 in Resources */,
 				FC1AADB31B5D34B6007587D3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
