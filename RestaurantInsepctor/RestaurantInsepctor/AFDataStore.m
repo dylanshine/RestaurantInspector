@@ -56,7 +56,6 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
              if ([error.localizedDescription isEqualToString:@"The request timed out."]) {
-                 [SVProgressHUD dismiss];
                  [self showTimeOutAlert];
              }
          }];
@@ -136,6 +135,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
 }
 
 -(void)showTimeOutAlert {
+    [SVProgressHUD dismiss];
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Request Timed Out" andMessage:@"Inspector Ralph doesn't have a good connection right now."];
     alertView.titleColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
     
