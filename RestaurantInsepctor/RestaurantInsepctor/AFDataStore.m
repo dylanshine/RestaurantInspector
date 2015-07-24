@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "Constants.h"
 #import "SVProgressHUD.h"
+#import <SIAlertView/SIAlertView.h>
 
 static const NSString *kGooglePlacesURL = @"https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
 static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/maps/api/place/details/json?placeid=";
@@ -34,6 +35,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     NSString *apiURL = [NSString stringWithFormat:@"%@location=%f,%f&radius=%lu&types=restaurant&key=%@", kGooglePlacesURL,currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, (long)radius, kGooglePlacesAPI];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setTimeoutInterval:13];
     [manager GET:apiURL
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -53,6 +55,10 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
+             if ([error.localizedDescription isEqualToString:@"The request timed out."]) {
+                 [SVProgressHUD dismiss];
+                 [self showTimeOutAlert];
+             }
          }];
 }
 
@@ -60,6 +66,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     NSString *detailURL = [NSString stringWithFormat:@"%@%@&key=%@",kGooglePlaceDetailURL,placeID,kGooglePlacesAPI];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setTimeoutInterval:5];
     [manager GET:detailURL
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -69,6 +76,9 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
              
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              NSLog(@"Error: %@", error);
+             if ([error.localizedDescription isEqualToString:@"The request timed out."]) {
+                 [self showTimeOutAlert];
+             }
          }];
 }
 
@@ -78,6 +88,7 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager.requestSerializer setTimeoutInterval:5];
         [manager GET:url
           parameters:nil
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -97,6 +108,9 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
                  
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  NSLog(@"Error: %@", error);
+                 if ([error.localizedDescription isEqualToString:@"The request timed out."]) {
+                     [self showTimeOutAlert];
+                 }
              }];
     });
     
@@ -108,13 +122,29 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
 {
     NSString *nycOpenDataUrl = [NSString stringWithFormat:@"https://data.cityofnewyork.us/resource/9w7m-hzhe.json?%@&phone=%@",kNycOpenDataAPI,phoneNumber];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager.requestSerializer setTimeoutInterval:5];
     [manager GET:nycOpenDataUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"Nyc Success: %@",responseObject);
         completionBlock(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Failure:%@",error.description);
+        if ([error.localizedDescription isEqualToString:@"The request timed out."]) {
+            [self showTimeOutAlert];
+        }
     }];
     
+}
+
+-(void)showTimeOutAlert {
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Request Timed Out" andMessage:@"Inspector Ralph doesn't have a good connection right now."];
+    alertView.titleColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
+    
+    [alertView addButtonWithTitle:@"Okay"
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alert) {
+                          }];
+    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    [alertView show];
 }
 
 
