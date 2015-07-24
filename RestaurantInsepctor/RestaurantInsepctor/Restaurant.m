@@ -100,14 +100,17 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     for (NSDictionary *resultInspection in restaurantInspections) {
-        NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:9];
-        NSDate *date = [dateFormatter dateFromString:dateString];
-
-        Inspection *inspection = [[Inspection alloc] initWithInspectionDate:date
-                                                               CriticalFlag:[self criticalValue:resultInspection[@"critical_flag"]]
-                                                                Description:resultInspection[@"violation_description"]
-                                                                      Score:[resultInspection[@"score"] integerValue]];
-        [self.inspections addObject:inspection];
+        
+        if (resultInspection[@"inspection_date"]) {
+            NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:9];
+            NSDate *date = [dateFormatter dateFromString:dateString];
+            
+            Inspection *inspection = [[Inspection alloc] initWithInspectionDate:date
+                                                                   CriticalFlag:[self criticalValue:resultInspection[@"critical_flag"]]
+                                                                    Description:resultInspection[@"violation_description"]
+                                                                          Score:[resultInspection[@"score"] integerValue]];
+            [self.inspections addObject:inspection];
+        }
     }
 }
 
