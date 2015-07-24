@@ -244,6 +244,7 @@
 				TargetAttributes = {
 					FC1AADA11B5D34B6007587D3 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 6FWSRPXBW6;
 					};
 					FC1AADBA1B5D34B6007587D3 = {
 						CreatedOnToolsVersion = 6.4;
@@ -465,7 +466,9 @@
 			baseConfigurationReference = 1994DDA3C199BA703CDD0ADC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RestaurantInsepctor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -476,7 +479,9 @@
 			baseConfigurationReference = D837E358DA2DEF7A115F5C4E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RestaurantInsepctor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
