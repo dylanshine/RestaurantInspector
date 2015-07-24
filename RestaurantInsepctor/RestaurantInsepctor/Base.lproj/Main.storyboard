@@ -184,14 +184,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cuisine:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GO-J5-oBs">
-                                <rect key="frame" x="234" y="185" width="62" height="29.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Inspections" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-Nu-QXs">
-                                <rect key="frame" x="226.5" y="211.5" width="147.5" height="20.5"/>
+                                <rect key="frame" x="226" y="211" width="147.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -204,7 +198,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Italian" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-ZU-fdc">
-                                <rect key="frame" x="304" y="189" width="45.5" height="20.5"/>
+                                <rect key="frame" x="277.5" y="189" width="45.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -212,20 +206,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qto-ZU-fdc" firstAttribute="leading" secondItem="5GO-J5-oBs" secondAttribute="trailing" constant="8" id="2IK-wm-8oE"/>
+                            <constraint firstAttribute="centerX" secondItem="Qto-ZU-fdc" secondAttribute="centerX" id="3dV-kQ-JRK"/>
                             <constraint firstAttribute="centerX" secondItem="yFi-Jp-eAu" secondAttribute="centerX" id="DHk-mE-kBF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GPg-gA-m2B" secondAttribute="trailing" constant="-16" id="IgN-Ik-NB8"/>
                             <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="Qto-ZU-fdc" secondAttribute="bottom" constant="2" id="Ncm-lq-ORL"/>
-                            <constraint firstAttribute="centerX" secondItem="5GO-J5-oBs" secondAttribute="centerX" constant="35" id="O1o-Sd-VJX"/>
                             <constraint firstItem="Qto-ZU-fdc" firstAttribute="top" secondItem="yFi-Jp-eAu" secondAttribute="bottom" constant="5" id="P0B-Ed-m5w"/>
                             <constraint firstItem="f6E-b0-xa2" firstAttribute="top" secondItem="GPg-gA-m2B" secondAttribute="bottom" id="PRS-PD-wta"/>
-                            <constraint firstItem="Pc8-Nu-QXs" firstAttribute="top" secondItem="5GO-J5-oBs" secondAttribute="bottom" constant="-3" id="Vdu-BE-8tb"/>
                             <constraint firstItem="GPg-gA-m2B" firstAttribute="top" secondItem="Pc8-Nu-QXs" secondAttribute="bottom" constant="8" id="Vv6-KZ-13F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F86-4C-Nfz" secondAttribute="trailing" constant="-16" id="cFz-BR-4Ry"/>
                             <constraint firstItem="F86-4C-Nfz" firstAttribute="leading" secondItem="U9f-n6-fm4" secondAttribute="leadingMargin" constant="-16" id="inV-ME-rkR"/>
                             <constraint firstItem="F86-4C-Nfz" firstAttribute="top" secondItem="U9f-n6-fm4" secondAttribute="topMargin" id="j0D-1H-ZLs"/>
                             <constraint firstAttribute="centerX" secondItem="Pc8-Nu-QXs" secondAttribute="centerX" id="nk1-bo-FW4"/>
-                            <constraint firstItem="5GO-J5-oBs" firstAttribute="top" secondItem="yFi-Jp-eAu" secondAttribute="bottom" constant="1" id="tG0-gM-oEu"/>
                             <constraint firstItem="yFi-Jp-eAu" firstAttribute="top" secondItem="F86-4C-Nfz" secondAttribute="bottom" constant="8" id="xGf-lV-XZt"/>
                             <constraint firstItem="GPg-gA-m2B" firstAttribute="leading" secondItem="U9f-n6-fm4" secondAttribute="leadingMargin" constant="-16" id="zxx-GZ-wcf"/>
                         </constraints>
