@@ -108,6 +108,7 @@
 
 -(void)ralphAnimateOffScreen
 {
+    self.ralphInPlace = NO;
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
     [UIView animateWithDuration:2
@@ -119,7 +120,6 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         self.ralphInPlace = NO;
                          self.selectedRestaurant = nil;
                      }];
 }
