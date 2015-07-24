@@ -82,7 +82,7 @@
 }
 
 
--(void)ralphAnimateOnToScreenWithRestaurant:(Restaurant *)restaurant
+-(void)ralphAnimateOnToScreen
 {
     [UIView animateWithDuration:2
                           delay:0
@@ -95,9 +95,7 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         self.triangle.hidden = NO;
-                         self.textBubble.hidden = NO;
-                         self.textBubble.text = [restaurant textBubbleMessage];
+                         
                      }];
 
 }
@@ -234,6 +232,7 @@
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
+    [self ralphAnimateOnToScreen];
     
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
@@ -250,8 +249,9 @@
                                                     self.showDetails.enabled = NO;
                                                 }
                                                 self.selectedRestaurant = restaurantAnnotation.restaurant;
-                                                [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
-                                               
+                                                self.triangle.hidden = NO;
+                                                self.textBubble.hidden = NO;
+                                                self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
                                             }];
         }];
     }
