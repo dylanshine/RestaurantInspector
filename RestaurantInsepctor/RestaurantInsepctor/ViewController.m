@@ -137,6 +137,7 @@
                 [self centerMapOnLocation:self.currentLocation];
                [strongSelf setupMap];
                 strongSelf.loaded = YES;
+        
                 [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
             }
             

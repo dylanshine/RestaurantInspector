@@ -8,7 +8,7 @@
 
 #import "Restaurant.h"
 #import "Inspection.h"
-
+#import <UIKit/UIKit.h>
 @implementation Restaurant
 -(instancetype)initWithPhoneNumber:(NSString *)phoneNumber Name:(NSString *)name
 {
@@ -106,6 +106,16 @@
     if (!self.mostRecentGrade) {
         return [NSString stringWithFormat:@"I couldn't find the current grade for %@.\nPlease try again later.", self.name];
     } else {
+        
+//        NSString *textNeedsBold = [NSString stringWithFormat:@"Grade %@",self.mostRecentGrade];
+//        NSMutableAttributedString *boldString = [[NSMutableAttributedString alloc] initWithString:textNeedsBold];
+//        NSRange range = [textNeedsBold rangeOfString:textNeedsBold];
+//        [boldString beginEditing];
+//        [boldString addAttribute:NSFontAttributeName
+//                           value:[UIFont fontWithName:@"Helvetica-Bold" size:13]
+//                           range:range];
+//        [boldString endEditing];
+        
         return [NSString stringWithFormat:@"Ralph here, %@ currently holds a Grade %@ sanitary inspection with %lu critical violations.\nPlease tap the bubble for more details.",self.name,self.mostRecentGrade,(unsigned long)[self criticalViolations]];
     }
 }
