@@ -271,10 +271,8 @@
 - (IBAction)refreshNearbyRestaurants:(UIButton *)sender {
     
     [SVProgressHUD showWithStatus:@"Refreshing Nearby Restaurants" maskType:SVProgressHUDMaskTypeBlack];
-    for (int i =0; i < [self.mapView.annotations count]; i++) {
-        if ([[self.mapView.annotations objectAtIndex:i]isKindOfClass:[RestaurantAnnotation class]]) {
-            [self.mapView removeAnnotation:[self.mapView.annotations objectAtIndex:i]];
-        }
+    for (id<MKAnnotation> annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
     }
     [self setupMap];
 }
