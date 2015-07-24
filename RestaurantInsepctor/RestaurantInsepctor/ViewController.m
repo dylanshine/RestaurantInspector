@@ -82,9 +82,9 @@
 }
 
 
--(void)ralphAnimateOnToScreenWithRestaurant:(Restaurant *)restaurant
+-(void)ralphAnimateOnToScreen
 {
-    [UIView animateWithDuration:2
+    [UIView animateWithDuration:1
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -95,9 +95,7 @@
                          [self.view layoutIfNeeded];
                      }
                      completion:^(BOOL finished) {
-                         self.triangle.hidden = NO;
-                         self.textBubble.hidden = NO;
-                         self.textBubble.text = [restaurant textBubbleMessage];
+                         
                      }];
 
 }
@@ -211,7 +209,7 @@
         UIImage *ralphButtonImage = [UIImage imageNamed:@"ralph1"];
         
         UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        detailButton.frame = CGRectMake(141,5,30,30);
+        detailButton.frame = CGRectMake(141,5,40,40);
         [detailButton setImage:ralphButtonImage forState:UIControlStateNormal];
         detailButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];
@@ -234,6 +232,7 @@
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
+    [self ralphAnimateOnToScreen];
     
     if (!restaurantAnnotation.restaurant) {
         [self.dataStore getDetailsForRestaurantID:restaurantAnnotation.placeID Completion:^(NSString *phoneNumber) {
@@ -241,7 +240,7 @@
             [self.dataStore getRestaurantInfoWithCompletion:[restaurantAnnotation.restaurant formattedPhoneNumber]
                                             completionBlock:^(NSArray *results) {
                                                 
-                                                if (results) {
+                                                if (results.count > 0) {
                                                     if (!restaurantAnnotation.restaurant.inspections.count) {
                                                         [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
                                                     }
@@ -249,15 +248,21 @@
                                                 } else {
                                                     self.showDetails.enabled = NO;
                                                 }
-                                                self.selectedRestaurant = restaurantAnnotation.restaurant;
-                                                [self ralphAnimateOnToScreenWithRestaurant:restaurantAnnotation.restaurant];
-                                               
+                                                [self showSelectedRestaurantMessage:restaurantAnnotation];
                                             }];
         }];
+    } else {
+        [self showSelectedRestaurantMessage:restaurantAnnotation];
     }
-    
 }
 
+
+-(void)showSelectedRestaurantMessage:(RestaurantAnnotation *)restaurantAnnotation {
+    self.selectedRestaurant = restaurantAnnotation.restaurant;
+    self.triangle.hidden = NO;
+    self.textBubble.hidden = NO;
+    self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
+}
 
 - (IBAction)centerMapOnUserLocation:(UIButton *)sender {
     [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];

@@ -56,8 +56,6 @@
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
     
-    NSLog(@"%ld",(long)score);
-    
     if (score <= 14) {
         return @"A";
     } else if (score > 14 && score < 28) {
@@ -79,10 +77,10 @@
     
     
     for (NSDictionary *inspection in restaurantInspections) {
-        NSString *dateString = [inspection[@"inspection_date"] substringToIndex:9];
+        NSString *dateString = [inspection[@"inspection_date"] substringToIndex:10];
         NSDate *date = [dateFormatter dateFromString:dateString];
         
-        if (date > mostRecentDate && inspection[@"score"]) {
+        if (date > mostRecentDate && [inspection[@"score"] integerValue]) {
             mostRecentDate = date;
             mostRecentGrade = [self convertScoreToGrade:[inspection[@"score"] integerValue]];
         }
@@ -100,15 +98,19 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     for (NSDictionary *resultInspection in restaurantInspections) {
-        NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:9];
-        NSDate *date = [dateFormatter dateFromString:dateString];
-
-        Inspection *inspection = [[Inspection alloc] initWithInspectionDate:date
-                                                               CriticalFlag:[self criticalValue:resultInspection[@"critical_flag"]]
-                                                                Description:resultInspection[@"violation_description"]
-                                                                      Score:[resultInspection[@"score"] integerValue]];
-        [self.inspections addObject:inspection];
+        
+        if (resultInspection[@"inspection_date"] && [resultInspection[@"score"] integerValue]) {
+            NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:10];
+            NSDate *date = [dateFormatter dateFromString:dateString];
+            
+            Inspection *inspection = [[Inspection alloc] initWithInspectionDate:date
+                                                                   CriticalFlag:[self criticalValue:resultInspection[@"critical_flag"]]
+                                                                    Description:resultInspection[@"violation_description"]
+                                                                          Score:[resultInspection[@"score"] integerValue]];
+            [self.inspections addObject:inspection];
+        }
     }
+    [self sortInspectionsByDate];
 }
 
 -(BOOL)criticalValue:(NSString *)criticalFlag {
@@ -120,10 +122,16 @@
 
 -(NSString *)textBubbleMessage {
     if (!self.mostRecentGrade) {
-        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. Please try again later.", self.name];
+        return [NSString stringWithFormat:@"I couldn't find the current grade for %@.\nPlease try again later.", self.name];
     } else {
-        return [NSString stringWithFormat:@"%@'s current grade is a %@. Please tap for more details...ya heard?!",self.name,self.mostRecentGrade];
+        return [NSString stringWithFormat:@"%@'s current grade is a %@.\nPlease tap for more details...ya heard?!",self.name,self.mostRecentGrade];
     }
+}
+
+-(void)sortInspectionsByDate {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"inspectionDate" ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObject:descriptor];
+    self.inspections = [[self.inspections sortedArrayUsingDescriptors:descriptors] mutableCopy];
 }
 
 @end
