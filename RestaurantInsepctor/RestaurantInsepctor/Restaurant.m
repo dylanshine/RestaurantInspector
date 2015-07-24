@@ -23,7 +23,6 @@
 }
 
 -(void)setupRestaurantInspectionDataWithResults:(NSArray *)restaurantInspections {
-    [self createAverage:restaurantInspections];
     [self findMostRecentGrade:restaurantInspections];
     [self getRestaurantCuisineDescription:restaurantInspections];
     [self createInspections:restaurantInspections];
@@ -35,23 +34,6 @@
     
     NSString *formattedPhoneNumber = [phoneArray componentsJoinedByString:@""];
     return formattedPhoneNumber;
-}
-
--(void)createAverage:(NSArray *)restaurantInspections {
-    NSMutableArray *scores = [NSMutableArray array];
-    
-    for (NSDictionary *inspection in restaurantInspections) {
-        if (inspection[@"score"]) {
-            [scores addObject:inspection[@"score"]];
-        }
-    }
-    NSInteger totalOfScores = 0;
-    
-    for (NSNumber *score in scores) {
-        totalOfScores += score.integerValue;
-    }
-
-   self.averageGrade = [NSString stringWithFormat:@"%lu",totalOfScores / scores.count];
 }
 
 -(NSString *)convertScoreToGrade:(NSInteger)score {
