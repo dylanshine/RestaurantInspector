@@ -21,6 +21,21 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Asterism (1.0.0-RC3)
+  - FontAwesomeKit (2.1.8):
+    - FontAwesomeKit/Core (= 2.1.8)
+    - FontAwesomeKit/FontAwesome (= 2.1.8)
+    - FontAwesomeKit/FoundationIcons (= 2.1.8)
+    - FontAwesomeKit/IonIcons (= 2.1.8)
+    - FontAwesomeKit/Zocial (= 2.1.8)
+  - FontAwesomeKit/Core (2.1.8)
+  - FontAwesomeKit/FontAwesome (2.1.8):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.1.8):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.1.8):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.1.8):
+    - FontAwesomeKit/Core
   - INTULocationManager (3.0.3)
   - Masonry (0.6.2)
   - SVProgressHUD (1.1.3)
@@ -28,6 +43,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Asterism (= 1.0.0-RC3)
+  - FontAwesomeKit (~> 2.1.0)
   - INTULocationManager
   - Masonry
   - SVProgressHUD
@@ -35,6 +51,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Asterism: 7c5d4538d1a179e1a421b0bd1a40fba9498c4af4
+  FontAwesomeKit: 64759fb28b5d2e74a1bd81553d7c11ca10e32179
   INTULocationManager: e79327803a163f5fec28eb042bb124ed0c6e4876
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1

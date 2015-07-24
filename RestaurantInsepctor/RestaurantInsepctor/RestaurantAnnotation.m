@@ -58,68 +58,12 @@
 }
 
 -(UIImage *)setPinImage {
-    NSArray *nameArray = [self.name componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
-   nameArray = ASTMap(nameArray, ^id(id obj) {
-        return [obj lowercaseString];
-    });
+    UIImage *restaurantImage = [UIImage imageNamed:@"restaurantImage"];
     
-    for (NSString *word in nameArray) {
-        
-        if ([[FoodTerms latin] containsObject:word]) {
-            return [UIImage imageNamed:@"latin"];
-        } else if ([[FoodTerms pizza] containsObject:word]) {
-            return [UIImage imageNamed:@"pizza"];
-        } else if ([[FoodTerms chinese] containsObject:word]) {
-            return [UIImage imageNamed:@"chinese"];
-        } else if ([[FoodTerms japanese] containsObject:word]) {
-            return [UIImage imageNamed:@"japanese"];
-        } else if ([[FoodTerms italian] containsObject:word]) {
-            return [UIImage imageNamed:@"italian"];
-        } else if ([[FoodTerms icecream] containsObject:word]) {
-            return [UIImage imageNamed:@"icecream"];
-        } else if ([[FoodTerms juice] containsObject:word]) {
-            return [UIImage imageNamed:@"juice"];
-        } else if ([[FoodTerms steakhouse] containsObject:word]) {
-            return [UIImage imageNamed:@"steakhouse"];
-        } else if ([[FoodTerms fish] containsObject:word]) {
-            return [UIImage imageNamed:@"fish"];
-        } else if ([[FoodTerms wine] containsObject:word]) {
-            return [UIImage imageNamed:@"winebar"];
-        } else if ([[FoodTerms thai] containsObject:word]) {
-            return [UIImage imageNamed:@"thai"];
-        } else if ([[FoodTerms korean] containsObject:word]) {
-            return [UIImage imageNamed:@"korean"];
-        } else if ([[FoodTerms tapas] containsObject:word]) {
-            return [UIImage imageNamed:@"tapas"];
-        } else if ([[FoodTerms mediterranean] containsObject:word]) {
-            return [UIImage imageNamed:@"mediterranean"];
-        } else if ([[FoodTerms indian] containsObject:word]) {
-            return [UIImage imageNamed:@"indian"];
-        } else if ([[FoodTerms cafe] containsObject:word]) {
-            return [UIImage imageNamed:@"coffee"];
-        } else if ([[FoodTerms fastFood] containsObject:word]) {
-            return [UIImage imageNamed:@"fastfood"];
-        } else if ([[FoodTerms bar] containsObject:word]) {
-            return [UIImage imageNamed:@"bar"];
-        }
-        
-    }
-    
-    return [self randomRestaurantIcon];
+    return restaurantImage;
 }
 
-- (UIImage *)randomRestaurantIcon
-{
-    int randomIndex = arc4random()%[self.restaurantIcons count];
-    return [self.restaurantIcons objectAtIndex:randomIndex];
-}
 
--(NSArray *)restaurantIcons {
-    if (!_restaurantIcons) {
-        _restaurantIcons = @[[UIImage imageNamed:@"restaurant1"],[UIImage imageNamed:@"restaurant2"]];
-    }
-    return _restaurantIcons;
-}
 
 @end
