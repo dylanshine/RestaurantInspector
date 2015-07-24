@@ -139,7 +139,7 @@
                [strongSelf setupMap];
                 strongSelf.loaded = YES;
         
-                [SVProgressHUD showWithStatus:@"Loading Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+                [SVProgressHUD showWithStatus:@"Loading Nearby Restaurants..." maskType:SVProgressHUDMaskTypeBlack];
             }
             
         }
@@ -233,6 +233,7 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    [SVProgressHUD showWithStatus:@"Loading Restaurant Inspections..."];
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
@@ -272,6 +273,7 @@
 
 
 -(void)showSelectedRestaurantMessage {
+    [SVProgressHUD dismiss];
     self.triangle.hidden = NO;
     self.textBubble.hidden = NO;
     self.textBubble.text = [self.selectedRestaurant textBubbleMessage];
@@ -283,7 +285,7 @@
 
 - (IBAction)refreshNearbyRestaurants:(UIButton *)sender {
     
-    [SVProgressHUD showWithStatus:@"Refreshing Nearby Restaurants" maskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:@"Refreshing Nearby Restaurants..." maskType:SVProgressHUDMaskTypeBlack];
     for (id<MKAnnotation> annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
