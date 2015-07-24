@@ -14,12 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FontAwesomeKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-INTULocationManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SIAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01DECCF91EC05B9516B0DAFB</key>
+		<key>0CB56943E7D86FB74AD44CAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>030B8BA030CB1DFB3420144D</key>
+		<key>17E9FDD196BE3ED6EDC08655</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2954B2846F24F58AD33F55BD</key>
+		<key>76ED850BD79C0AA64F2D9633</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8F584C67636DB8259BCE13B9</key>
+		<key>D2B489321F68F73A77BC72E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E6976BD15C6F59762A31E72</key>
+		<key>DC8FAC9E0348D683ED9DAA10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5DC421C8F9A8C201BA7F530</key>
+		<key>E9917186D5245861553041DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EAF35C5E6BC91D6CD5AEBDE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EF7E77146DBE370AB05558DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
