@@ -32,6 +32,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *showDetails;
 @property (nonatomic) Restaurant *selectedRestaurant;
 @property (nonatomic) BOOL ralphInPlace;
+@property (nonatomic) BOOL detailCallComplete;
 
 @end
 
@@ -99,7 +100,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.ralphInPlace = YES;
-                         if (self.selectedRestaurant.inspections.count) {
+                         if (self.selectedRestaurant && self.detailCallComplete) {
                              [self showSelectedRestaurantMessage];
                          }
                      }];
@@ -235,6 +236,7 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
     [SVProgressHUD showWithStatus:@"Loading Restaurant Inspections..."];
+    self.detailCallComplete = NO;
     RestaurantAnnotation *restaurantAnnotation = (RestaurantAnnotation *)view.annotation;
     [self.mapView setCenterCoordinate:restaurantAnnotation.coordinate animated:YES];
     self.triangle.hidden = YES;
@@ -255,10 +257,12 @@
                                                     if (!restaurantAnnotation.restaurant.inspections.count) {
                                                         [restaurantAnnotation.restaurant setupRestaurantInspectionDataWithResults:results];
                                                     }
+                                                    
                                                     self.showDetails.enabled = YES;
                                                 } else {
                                                     self.showDetails.enabled = NO;
                                                 }
+                                                self.detailCallComplete = YES;
                                                 if (self.ralphInPlace) {
                                                     [self showSelectedRestaurantMessage];
                                                 }
@@ -267,6 +271,7 @@
         }];
     } else {
         self.selectedRestaurant = restaurantAnnotation.restaurant;
+        self.detailCallComplete = YES;
         if (self.ralphInPlace) {
             [self showSelectedRestaurantMessage];
         }
