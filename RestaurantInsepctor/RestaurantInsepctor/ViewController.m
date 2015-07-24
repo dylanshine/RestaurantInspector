@@ -266,7 +266,7 @@
 }
 
 - (IBAction)centerMapOnUserLocation:(UIButton *)sender {
-    [self.mapView setCenterCoordinate:self.mapView.userLocation.coordinate animated:YES];
+    [self centerMapOnLocation:self.currentLocation];
 }
 
 - (IBAction)refreshNearbyRestaurants:(UIButton *)sender {
