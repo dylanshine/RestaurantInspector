@@ -266,6 +266,7 @@
                                             }];
         }];
     } else {
+        self.selectedRestaurant = restaurantAnnotation.restaurant;
         if (self.ralphInPlace) {
             [self showSelectedRestaurantMessage];
         }
