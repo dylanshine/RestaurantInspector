@@ -119,6 +119,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.ralphInPlace = NO;
+                         self.selectedRestaurant = nil;
                      }];
 }
 
