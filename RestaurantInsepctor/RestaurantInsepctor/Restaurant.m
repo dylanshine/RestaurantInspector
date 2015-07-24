@@ -124,9 +124,9 @@
 
 -(NSString *)textBubbleMessage {
     if (!self.mostRecentGrade) {
-        return [NSString stringWithFormat:@"I couldn't find the current grade for %@. Please try again later.", self.name];
+        return [NSString stringWithFormat:@"I couldn't find the current grade for %@.\nPlease try again later.", self.name];
     } else {
-        return [NSString stringWithFormat:@"%@'s current grade is a %@. Please tap for more details...ya heard?!",self.name,self.mostRecentGrade];
+        return [NSString stringWithFormat:@"%@'s current grade is a %@.\nPlease tap for more details...ya heard?!",self.name,self.mostRecentGrade];
     }
 }
 
