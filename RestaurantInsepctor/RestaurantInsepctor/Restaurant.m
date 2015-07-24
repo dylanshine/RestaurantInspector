@@ -124,7 +124,7 @@
     if (!self.mostRecentGrade) {
         return [NSString stringWithFormat:@"I couldn't find the current grade for %@.\nPlease try again later.", self.name];
     } else {
-        return [NSString stringWithFormat:@"%@'s current grade is a %@.\nPlease tap for more details...ya heard?!",self.name,self.mostRecentGrade];
+        return [NSString stringWithFormat:@"%@ currently holds a Grade %@ sanitary inspection with %lu critical violations.\nPlease tap for more details...ya heard?!",self.name,self.mostRecentGrade,(unsigned long)[self criticalViolations]];
     }
 }
 
@@ -132,6 +132,16 @@
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"inspectionDate" ascending:NO];
     NSArray *descriptors = [NSArray arrayWithObject:descriptor];
     self.inspections = [[self.inspections sortedArrayUsingDescriptors:descriptors] mutableCopy];
+}
+
+-(NSUInteger)criticalViolations {
+    NSUInteger criticalViolationsCount = 0;
+    for (Inspection *inspection in self.inspections) {
+        if (inspection.criticalFlag) {
+            criticalViolationsCount++;
+        }
+    }
+    return criticalViolationsCount;
 }
 
 @end
