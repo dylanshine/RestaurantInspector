@@ -51,7 +51,11 @@
     UILabel *scoreLabel = (UILabel *)[cell.contentView viewWithTag:2];
     UILabel *description = (UILabel *)[cell.contentView viewWithTag:3];
     
-    dateLabel.text = [NSString stringWithFormat:@"%@",inspection.inspectionDate];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    NSString *inspectionDateString = [dateFormatter stringFromDate:inspection.inspectionDate];
+    
+    dateLabel.text = inspectionDateString;
     scoreLabel.text = [NSString stringWithFormat:@"%lu",(unsigned long)inspection.score];
     description.text = inspection.violationDescription;
     

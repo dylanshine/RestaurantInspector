@@ -79,10 +79,10 @@
     
     
     for (NSDictionary *inspection in restaurantInspections) {
-        NSString *dateString = [inspection[@"inspection_date"] substringToIndex:9];
+        NSString *dateString = [inspection[@"inspection_date"] substringToIndex:10];
         NSDate *date = [dateFormatter dateFromString:dateString];
         
-        if (date > mostRecentDate && inspection[@"score"]) {
+        if (date > mostRecentDate && [inspection[@"score"] integerValue]) {
             mostRecentDate = date;
             mostRecentGrade = [self convertScoreToGrade:[inspection[@"score"] integerValue]];
         }
@@ -101,8 +101,8 @@
     
     for (NSDictionary *resultInspection in restaurantInspections) {
         
-        if (resultInspection[@"inspection_date"]) {
-            NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:9];
+        if (resultInspection[@"inspection_date"] && [resultInspection[@"score"] integerValue]) {
+            NSString *dateString = [resultInspection[@"inspection_date"] substringToIndex:10];
             NSDate *date = [dateFormatter dateFromString:dateString];
             
             Inspection *inspection = [[Inspection alloc] initWithInspectionDate:date
@@ -112,6 +112,7 @@
             [self.inspections addObject:inspection];
         }
     }
+    [self sortInspectionsByDate];
 }
 
 -(BOOL)criticalValue:(NSString *)criticalFlag {
@@ -127,6 +128,12 @@
     } else {
         return [NSString stringWithFormat:@"%@'s current grade is a %@. Please tap for more details...ya heard?!",self.name,self.mostRecentGrade];
     }
+}
+
+-(void)sortInspectionsByDate {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"inspectionDate" ascending:NO];
+    NSArray *descriptors = [NSArray arrayWithObject:descriptor];
+    self.inspections = [[self.inspections sortedArrayUsingDescriptors:descriptors] mutableCopy];
 }
 
 @end
