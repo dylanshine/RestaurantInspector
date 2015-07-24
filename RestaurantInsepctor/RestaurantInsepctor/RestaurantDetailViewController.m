@@ -28,7 +28,7 @@
     self.tableView.separatorColor = [UIColor redColor];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navBar.topItem.title = self.restaurant.name;
-    self.cuisineLabel.text = [NSString stringWithFormat:@"Cuisine Type: %@",self.restaurant.cuisineDescription];
+    self.cuisineLabel.text = self.restaurant.cuisineDescription;
     self.gradeImageView.image = [self setGradeImage];
 }
 
