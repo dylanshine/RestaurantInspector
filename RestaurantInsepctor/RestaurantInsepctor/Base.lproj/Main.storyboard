@@ -68,10 +68,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szg-Am-DG6">
-                                <rect key="frame" x="113" y="25" width="40" height="40"/>
+                                <rect key="frame" x="113" y="27" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="fza-Yw-km4"/>
-                                    <constraint firstAttribute="width" constant="40" id="nbZ-W4-tSq"/>
+                                    <constraint firstAttribute="height" constant="35" id="fza-Yw-km4"/>
+                                    <constraint firstAttribute="width" constant="35" id="nbZ-W4-tSq"/>
                                 </constraints>
                                 <state key="normal" image="escape">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,7 +96,7 @@
                             <constraint firstItem="7y5-aw-37b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="125" id="Qvl-nR-mts"/>
                             <constraint firstItem="x4e-cV-8Ol" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="bottom" constant="600" id="SO9-z3-Ies"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="Dhb-FV-MCT" secondAttribute="leading" id="Tkk-KB-S8x"/>
-                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="szg-Am-DG6" secondAttribute="bottom" constant="-65" id="geq-v0-gri"/>
+                            <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="szg-Am-DG6" secondAttribute="bottom" constant="-62" id="geq-v0-gri"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hQM-y4-GhW"/>
                             <constraint firstItem="jbE-ZR-mzw" firstAttribute="top" secondItem="Dhb-FV-MCT" secondAttribute="bottom" constant="-70" id="sZF-He-9qZ"/>
                         </constraints>
