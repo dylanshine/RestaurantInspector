@@ -40,10 +40,13 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              NSLog(@"%@",responseObject);
+             if ([responseObject[@"status"] isEqualToString:@"ZERO_RESULTS"]) {
+                 [self noRestaurantsAlert];
+             }
+             
              for (NSDictionary *restaurant in responseObject[@"results"]) {
                  [self.results addObject:restaurant];
              }
-             
              
              if (responseObject[@"next_page_token"]) {
                  [self getNextPageOfResults:apiURL NextPageToken:responseObject[@"next_page_token"]];
@@ -123,7 +126,6 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setTimeoutInterval:5];
     [manager GET:nycOpenDataUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"Nyc Success: %@",responseObject);
         completionBlock(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Failure:%@",error.description);
@@ -137,6 +139,19 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
 -(void)showTimeOutAlert {
     [SVProgressHUD dismiss];
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Request Timed Out" andMessage:@"Inspector Ralph doesn't have a good connection right now."];
+    alertView.titleColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
+    
+    [alertView addButtonWithTitle:@"Okay"
+                             type:SIAlertViewButtonTypeDefault
+                          handler:^(SIAlertView *alert) {
+                          }];
+    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+    [alertView show];
+}
+
+-(void)noRestaurantsAlert {
+    [SVProgressHUD dismiss];
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"No Restaurants Found" andMessage:@"Inspector Ralph can't find any restaurants nearby."];
     alertView.titleColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
     
     [alertView addButtonWithTitle:@"Okay"
