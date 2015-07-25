@@ -15,6 +15,7 @@
 #import "TextBubble.h"
 #import "RestaurantDetailViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <SIAlertView/SIAlertView.h>
 
 
 @interface ViewController () <MKMapViewDelegate, AFDataStoreDelegate>
@@ -33,6 +34,7 @@
 @property (nonatomic) Restaurant *selectedRestaurant;
 @property (nonatomic) BOOL ralphInPlace;
 @property (nonatomic) BOOL detailCallComplete;
+@property (nonatomic) BOOL withinNYC;
 
 @end
 
@@ -52,6 +54,7 @@
     [self startLocationUpdateSubscription];
     self.triangle.hidden = YES;
     self.textBubble.hidden = YES;
+    self.withinNYC = YES;
     [self setupGestures];
     
 }
@@ -138,6 +141,7 @@
             strongSelf.currentLocation = currentLocation;
             if (!strongSelf.loaded) {
                 [self centerMapOnLocation:self.currentLocation];
+                [self getCurrentCity];
                [strongSelf setupMap];
                 strongSelf.loaded = YES;
         
@@ -221,6 +225,7 @@
         detailButton.frame = CGRectMake(141,5,40,40);
         [detailButton setImage:ralphButtonImage forState:UIControlStateNormal];
         detailButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        detailButton.enabled = self.withinNYC;
         [detailButton setTitle:annotation.title forState:UIControlStateNormal];
         
         annotationView.rightCalloutAccessoryView = detailButton;
@@ -314,6 +319,32 @@
     SystemSoundID soundID;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
     AudioServicesPlaySystemSound(soundID);
+}
+
+-(void)getCurrentCity {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+    [geocoder reverseGeocodeLocation:self.currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       if (![placemark.addressDictionary[@"City"] isEqualToString:@"New York"]) {
+                           self.withinNYC = NO;
+                           SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Warning: Outside NYC" andMessage:@"Inspector Ralph only works within the five boroughs of New York City."];
+                           alertView.titleColor = [UIColor colorWithRed:230.0f/255.0f green:83.0f/255.0f blue:54.0f/255.0f alpha:1.0f];
+                           
+                           [alertView addButtonWithTitle:@"Okay"
+                                                    type:SIAlertViewButtonTypeDefault
+                                                 handler:^(SIAlertView *alert) {
+                                                 }];
+                           alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+                           [alertView show];
+
+                       }
+                       
+                   }];
 }
 
 @end

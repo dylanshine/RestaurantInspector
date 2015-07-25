@@ -39,7 +39,6 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     [manager GET:apiURL
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"%@",responseObject);
              for (NSDictionary *restaurant in responseObject[@"results"]) {
                  [self.results addObject:restaurant];
              }
@@ -123,7 +122,6 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager.requestSerializer setTimeoutInterval:5];
     [manager GET:nycOpenDataUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"Nyc Success: %@",responseObject);
         completionBlock(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Failure:%@",error.description);
