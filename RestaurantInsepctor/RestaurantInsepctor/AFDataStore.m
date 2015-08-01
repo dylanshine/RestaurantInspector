@@ -39,7 +39,6 @@ static const NSString *kGooglePlaceDetailURL = @"https://maps.googleapis.com/map
     [manager GET:apiURL
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             NSLog(@"%@",responseObject);
              if ([responseObject[@"status"] isEqualToString:@"ZERO_RESULTS"]) {
                  [self noRestaurantsAlert];
              }
