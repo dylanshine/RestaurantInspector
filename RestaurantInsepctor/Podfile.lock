@@ -21,6 +21,10 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Asterism (1.0.0-RC3)
+  - Crashlytics (3.1.0)
+  - Fabric (1.2.8):
+    - Fabric/Base (= 1.2.8)
+  - Fabric/Base (1.2.8)
   - FontAwesomeKit (2.1.8):
     - FontAwesomeKit/Core (= 2.1.8)
     - FontAwesomeKit/FontAwesome (= 2.1.8)
@@ -44,6 +48,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Asterism (= 1.0.0-RC3)
+  - Crashlytics
+  - Fabric
   - FontAwesomeKit (~> 2.1.0)
   - INTULocationManager
   - Masonry
@@ -53,6 +59,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   Asterism: 7c5d4538d1a179e1a421b0bd1a40fba9498c4af4
+  Crashlytics: ef9a58a4e806b316a1748c06432f6f847ba09ac6
+  Fabric: a9eabe53915e9f1db55a84dd2838737928675878
   FontAwesomeKit: 64759fb28b5d2e74a1bd81553d7c11ca10e32179
   INTULocationManager: e79327803a163f5fec28eb042bb124ed0c6e4876
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
